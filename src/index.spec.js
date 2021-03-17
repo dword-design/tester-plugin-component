@@ -13,6 +13,7 @@ export default {
         import tester from '${packageName`@dword-design/tester`}'
         import self from '../src'
         import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
+        import globby from '${packageName`globby`}'
 
         export default tester({
           works: {
@@ -29,7 +30,14 @@ export default {
               expect(await foo.evaluate(el => el.innerText)).toEqual('Hello world')
             },
           },
-        }, [self(), testerPluginPuppeteer()])
+        }, [
+          self(),
+          testerPluginPuppeteer(),
+          {
+            after: async () =>
+              expect(await globby('*', { onlyFiles: false })).toEqual(['index.spec.js', 'index.vue']),
+          },
+        ])
 
       `,
         'index.vue': endent`
