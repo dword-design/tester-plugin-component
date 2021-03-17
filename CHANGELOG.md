@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dword-design/tester-plugin-component/compare/v1.0.1...v1.1.0) (2021-03-17)
+
+
+### Features
+
+* add pluginMode option ([#3](https://github.com/dword-design/tester-plugin-component/issues/3)) ([e3760d8](https://github.com/dword-design/tester-plugin-component/commit/e3760d8a10b133443a682f4cc6556b2dab4fed26))
+
 ## [1.0.1](https://github.com/dword-design/tester-plugin-component/compare/v1.0.0...v1.0.1) (2021-03-17)
 
 
