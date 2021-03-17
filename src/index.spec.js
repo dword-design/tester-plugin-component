@@ -5,6 +5,60 @@ import outputFiles from 'output-files'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default {
+  'client mode': () =>
+    withLocalTmpDir(async () => {
+      await outputFiles({
+        'index.spec.js': endent`
+        import { endent } from '@dword-design/functions'
+        import tester from '${packageName`@dword-design/tester`}'
+        import self from '../src'
+        import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
+
+        export default tester({
+          works: {
+            componentPath: require.resolve('./index.vue'),
+            page: endent\`
+              <template>
+                <client-only>
+                  <self class="foo" />
+                </client-only>
+              </template>
+
+            \`,
+            async test() {
+              await this.page.goto('http://localhost:3000')
+              const foo = await this.page.waitForSelector('.foo')
+              expect(await foo.evaluate(el => el.innerText)).toEqual('Hello world')
+            },
+          },
+        }, [
+          self({ pluginMode: 'client' }),
+          testerPluginPuppeteer(),
+        ])
+
+      `,
+        'index.vue': endent`
+        <template>
+          <div>{{ value }}</div>
+        </template>
+
+        <script>
+        export default {
+          computed: {
+            value: () => {
+              window.foo = 'Hello world'
+              return window.foo
+            }
+          }
+        }
+        </script>
+
+      `,
+      })
+      await execa.command(
+        `mocha --ui ${packageName`mocha-ui-exports-auto-describe`} --timeout 80000 index.spec.js`
+      )
+    }),
   works: () =>
     withLocalTmpDir(async () => {
       await outputFiles({

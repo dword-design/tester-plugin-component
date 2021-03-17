@@ -5,7 +5,7 @@ import outputFiles from 'output-files'
 import P from 'path'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
-export default () => ({
+export default (options = {}) => ({
   transform: test => {
     test = { test: () => {}, ...test }
     return function () {
@@ -23,7 +23,12 @@ export default () => ({
         const nuxt = new Nuxt({
           createRequire: 'native',
           dev: false,
-          plugins: [P.resolve('plugins', 'plugin.js')],
+          plugins: [
+            {
+              mode: options.pluginMode,
+              src: P.resolve('plugins', 'plugin.js'),
+            },
+          ],
         })
         await new Builder(nuxt).build()
         await nuxt.listen()
