@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dword-design/tester-plugin-component/compare/v1.0.0...v1.0.1) (2021-03-17)
+
+
+### Bug Fixes
+
+* run in tmp dir ([#2](https://github.com/dword-design/tester-plugin-component/issues/2)) ([9bc23e4](https://github.com/dword-design/tester-plugin-component/commit/9bc23e44f27b3311dc8108c09f457b139b6cf97f))
+
 # 1.0.0 (2021-03-17)
 
 
