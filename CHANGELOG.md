@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/dword-design/tester-plugin-component/compare/v1.1.0...v1.1.1) (2021-03-19)
+
+
+### Bug Fixes
+
+* enable source maps ([#4](https://github.com/dword-design/tester-plugin-component/issues/4)) ([20a6774](https://github.com/dword-design/tester-plugin-component/commit/20a677429b74c85e518ec09d95974929c81a4384))
+
 # [1.1.0](https://github.com/dword-design/tester-plugin-component/compare/v1.0.1...v1.1.0) (2021-03-17)
 
 
