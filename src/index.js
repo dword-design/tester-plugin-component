@@ -22,7 +22,7 @@ export default (options = {}) => ({
         })
         const nuxt = new Nuxt({
           createRequire: 'native',
-          dev: false,
+          dev: true,
           plugins: [
             {
               mode: options.pluginMode,
