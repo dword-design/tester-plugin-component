@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/dword-design/tester-plugin-component/compare/v1.1.2...v1.1.3) (2021-03-22)
+
+
+### Bug Fixes
+
+* code coverage ([#7](https://github.com/dword-design/tester-plugin-component/issues/7)) ([943c008](https://github.com/dword-design/tester-plugin-component/commit/943c008bef1441e14491864aa35db220f151550d))
+
 ## [1.1.2](https://github.com/dword-design/tester-plugin-component/compare/v1.1.1...v1.1.2) (2021-03-22)
 
 
