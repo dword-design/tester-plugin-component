@@ -1107,9 +1107,9 @@
     micromatch "^4.0.2"
 
 "@dword-design/base@^7.8.2":
-  version "7.9.7"
-  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-7.9.7.tgz#5f65d552637ad4eebf9edef3ed0b4adc3d3d4846"
-  integrity sha512-2aghAM3S43W5C80yV2o0uEfP4MJDnj37uS3iARdl1IBfofdgD+E4e3RMI+5ycyng2LGWbTXMj3pHgs7tI5Sy+A==
+  version "7.9.10"
+  resolved "https://registry.yarnpkg.com/@dword-design/base/-/base-7.9.10.tgz#ee593079e412f8f8e098388da8ff06f233bfd5bf"
+  integrity sha512-N67/42MImh+PL6kSvcVyrFWaxFKU/1HzeZV0bDhF5NBjmxY1AgjIgvqiIoujbiK+z6JOPicOBceQqiyWPbO0PA==
   dependencies:
     "@babel/core" "^7.6.4"
     "@babel/register" "^7.6.2"
@@ -1166,18 +1166,18 @@
   integrity sha512-vLx4R5874PE/a8tRZolCUZHidGhVlmmYILeOJ6KnGyJCUbFv68Y2oEJwJONWZOSogyUs9dr9I2HpW8W/i06cbw==
 
 "@dword-design/ci@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@dword-design/ci/-/ci-2.0.0.tgz#2fefaac4842e6b8d250c9659347429d2da43f00b"
-  integrity sha512-JJ5VyFoEVeFWq8JAg1AZIKctIvM+IiIUv32QfC7ccPLhGr282ViJ1rPsA9seOxMDf9ybFQv5Ux0n9qJb2Gen0w==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@dword-design/ci/-/ci-2.0.1.tgz#f8909865d51407105d70d5cefc74377395bad728"
+  integrity sha512-rpiWwLnZ/FKfuaepSTqNgK1zyqZt017a0aCsYkZXvOrn56YnSO5HvaI3TFvelMtaPLt9Zn9Ym8AF7K28wPn2pQ==
   dependencies:
     "@dword-design/functions" "^2.7.2"
     execa "^5.0.0"
     make-cli "^1.0.16"
 
 "@dword-design/eslint-config@^1.9.0":
-  version "1.27.1"
-  resolved "https://registry.yarnpkg.com/@dword-design/eslint-config/-/eslint-config-1.27.1.tgz#2045531491f979d0d863a53eedb583d68ecfb8ea"
-  integrity sha512-3fFsJhBPCA81EAA2WjVINJ440ScnYTv90VeLvoyyP8h8YzItrafCsPctO//pndIUTKofO62aCvYsEu066R/w+Q==
+  version "1.27.2"
+  resolved "https://registry.yarnpkg.com/@dword-design/eslint-config/-/eslint-config-1.27.2.tgz#5fbf903cf4f47be7694e35d471f1eb97fd29591a"
+  integrity sha512-BNjdnZFeFtkpvRIZcqGeQJmd/cOkw7RuelXXYjiBQS6/XR2r77uWI52SycGhhLAPIRnu5sE8ywzFrAa+y0Hewg==
   dependencies:
     "@dword-design/babel-config" "^1.0.0"
     "@dword-design/eslint-plugin-import-alias" "^1.1.1"
@@ -1201,15 +1201,15 @@
     vue-eslint-parser "^7.0.0"
 
 "@dword-design/eslint-plugin-import-alias@^1.1.1":
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/@dword-design/eslint-plugin-import-alias/-/eslint-plugin-import-alias-1.4.7.tgz#c4c61e26e88113530b0310109edadd4cbc85703f"
-  integrity sha512-LSfxp6EHwhY+nfqGqzvbbXJwzFmi0lpxOa755PL7Adq++EFlIjUp4imKveXIWrBh9i9YbL4J76up9iveAuMXQw==
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/@dword-design/eslint-plugin-import-alias/-/eslint-plugin-import-alias-1.4.8.tgz#e11002b0f5d4d70233c7e5126966a40e86d6d62d"
+  integrity sha512-f0Dr5aH5waD/aOnzfFeWW9BLoIn3yoMSQJWrj1JFkOfQCN5o33GxeQgeEzGMawYGvMFveqQPKtzYWpd0ccKkDA==
   dependencies:
     "@babel/core" "^7.10.2"
     "@dword-design/functions" "^1.1.2"
     babel-plugin-module-resolver "^4.0.0"
 
-"@dword-design/functions@^1.1.2", "@dword-design/functions@^1.1.4", "@dword-design/functions@^1.2.0", "@dword-design/functions@^1.2.1":
+"@dword-design/functions@^1.1.2", "@dword-design/functions@^1.1.4", "@dword-design/functions@^1.2.0", "@dword-design/functions@^1.2.1", "@dword-design/functions@^1.2.2":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@dword-design/functions/-/functions-1.2.2.tgz#c19562d7b652f08fd91758779c46fdd59e13a58e"
   integrity sha512-x3yI/02X//VPBFiYedDojk2quzxRq1p4lyv0i66/rHF+T5pmh95OZcASobQPWMjHyTAOWdrI91vpphhKZnAuig==
@@ -1228,21 +1228,24 @@
     tinycolor2 "^1.4.1"
 
 "@dword-design/puppeteer@^3.0.0":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@dword-design/puppeteer/-/puppeteer-3.0.1.tgz#c1fabe652915c27c5e5a2c3213751614a8fd9e80"
-  integrity sha512-6rxmRM+43pk2TujZtKbU3nni39ci/JnCu8eY3Ts+9OkcUvEcf43QRdkJ7Bdp6JaiET+k6jvHkZ15nbLzsa04KQ==
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@dword-design/puppeteer/-/puppeteer-3.0.2.tgz#5efde7f3196a6b828ba76ed605d7271c6ff8b377"
+  integrity sha512-u8+JwoKfhE58NOGp3o/oUoEk8fBk+hBihmdPy6glFNX1bmUoDxz5tjJtUhrrFMDNnwCAQVQ1PxBY1cxNXQsLzw==
   dependencies:
     puppeteer "^8.0.0"
 
-"@dword-design/tester-plugin-puppeteer@^1.0.2":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-puppeteer/-/tester-plugin-puppeteer-1.0.3.tgz#a0a90e3b895061c9bce9141cd5e9c6eb425d20b4"
-  integrity sha512-1j6RnCNi+ve7Q0dgYddZc5OAOPD/YydG6BxxIdAqtknRmxpouB5TsMPdp8M/5cp/QRQCdRE36mcNHEkNMHSI0A==
+"@dword-design/tester-plugin-puppeteer@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-puppeteer/-/tester-plugin-puppeteer-2.0.0.tgz#8c189feade634dd465b1e0b4294de5f5c1b0d866"
+  integrity sha512-qTM1MgDrCezh3k7sQXVJmxCY+xHpfwgSm6r9R7pYt2vT7Px/UpKsY6CO/LObDVxqvjcwbz9Z5OKqKb80L0GFmg==
+  dependencies:
+    "@dword-design/functions" "^1.2.2"
+    puppeteer-to-istanbul dword-design/puppeteer-to-istanbul#fork
 
 "@dword-design/tester@^1.2.0":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@dword-design/tester/-/tester-1.2.1.tgz#3d9ff2c2d683b6e42bdc5cb2c7d986d0df08cdb4"
-  integrity sha512-pkDBAc8SYJCpXrY6ZzKOHZTAjON8I2xCofzfn0wJbKP1m7lFQfDertO/wMvSioEgQjNFpjptY+smNpk46KRvcw==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@dword-design/tester/-/tester-1.2.2.tgz#adf6b91cb88fbdfc0191eee3f7375e63f047cd8a"
+  integrity sha512-zmDhImG5S2vONChi129fi9ozI7qdI7rEg8gPKm+nzCqNH/adRS77xJgPX18006sfoMHuO9ncd5m+V8b6ONa9nw==
   dependencies:
     "@dword-design/functions" "^1.1.4"
     promise-sequential "^1.1.1"
@@ -3598,6 +3601,11 @@ clone@^1.0.2:
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
 
+clone@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
+
 cmd-shim@^3.0.0, cmd-shim@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/cmd-shim/-/cmd-shim-3.0.3.tgz#2c35238d3df37d98ecdd7d5f6b8dc6b21cadc7cb"
@@ -4543,9 +4551,9 @@ depcheck-detector-package-name@^1.0.0:
   integrity sha512-Bd/8xYiCYycGMVUcwDCWllrc5WuV79dpvt/1DrW2rJl4Cl6svTSuAZh4+624HmitpUdkYv0hImkfGkzDgZ5oSQ==
 
 depcheck-package-name@^1.0.0, depcheck-package-name@^1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/depcheck-package-name/-/depcheck-package-name-1.0.3.tgz#7df5a65b9bc9d20bc2bb93c11865c0fae3abe4f8"
-  integrity sha512-50bkvMxGv3Db3LS5Ypxa+b37KpRArOIRW1b0fU/aLj8jrqNQvmLWO0CfrScZGtUkwPE9ssVp16xgH4RkAzgy4w==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/depcheck-package-name/-/depcheck-package-name-1.0.4.tgz#3bb42138cd576b54109556bbc545cbbb12d8480d"
+  integrity sha512-IcFDzVQxozgn4uTdarvy+JSCf27fa0NoYFVZiEyuYxtNQlBhkZ98LjEGfgpr3AOzBeewSuISaU7ulEqppQsM7A==
   dependencies:
     resolve-tagged-template "^1.0.0"
 
@@ -4687,9 +4695,9 @@ dir-glob@^3.0.0, dir-glob@^3.0.1:
     path-type "^4.0.0"
 
 docker-multirun@^1.0.3:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/docker-multirun/-/docker-multirun-1.0.7.tgz#4b9340a5d85bb32924dfe50082257e4584f69eda"
-  integrity sha512-6jEfcE/zFKBznWYY7O6hUUZsRSvIWcP7Bgd1B1RwOhQwhM6dotcGkCoJmAGpjOaljVg4Dq0gOUfTM6kXFAIJeg==
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/docker-multirun/-/docker-multirun-1.0.10.tgz#a2d729c0d2318e6e296839fa35ef7e6c87d7c907"
+  integrity sha512-O7v/lD+LeOvANQYI+sUO9BW8PiV51xT9pfJxl8/L9IGw/Q2KqRGa3ikeDGyOfAO8mmdGfqW45Xtx2vI4YWJRhQ==
   dependencies:
     "@dword-design/functions" "^1.2.0"
     execa "^5.0.0"
@@ -5423,9 +5431,9 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
     homedir-polyfill "^1.0.1"
 
 expect-mocha-image-snapshot@^1.0.0:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/expect-mocha-image-snapshot/-/expect-mocha-image-snapshot-1.0.5.tgz#a9bfbeab9c038aa156f681957744a2e6647abfbf"
-  integrity sha512-FPwTuLPaKcaGnzreIJieLEBZI1ttHGtvTZZPUEMfvFe/IiWuEOdhyZrg2s0SGZdPFXjiXEYtSQkvD8CxrBJnsQ==
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/expect-mocha-image-snapshot/-/expect-mocha-image-snapshot-1.0.6.tgz#67a98eb4238627b8c43c77d653e45c3996c5a477"
+  integrity sha512-ReeOkyrwuP0TWBdIKcKR1o2bK9qE5X0ZZhsm6i+wAOh77htiECDg5YNjxrTaGr3kruxdvFS7enVE1jF1bDh8Kw==
   dependencies:
     jest-image-snapshot "^4.4.0"
     jest-snapshot "^26.6.2"
@@ -6060,9 +6068,9 @@ get-port-please@^1.0.0:
     fs-memo "^1.2.0"
 
 get-projectz-readme-section-regex@^2.0.0:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/get-projectz-readme-section-regex/-/get-projectz-readme-section-regex-2.0.7.tgz#54872e1a6d00d1432a80f87f00cd366b65c3e7a1"
-  integrity sha512-BEczVi5oJZ/uSq9mk/a9BYXiFzKPM+Yoz/bCtmz/7/OZnXTQyJE3DhlMYIvR91fm2DgJFmrTPKtsAM+BDrG5Ow==
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/get-projectz-readme-section-regex/-/get-projectz-readme-section-regex-2.0.8.tgz#1495120568f9e92d22e4738d2025f2199a5a8c90"
+  integrity sha512-zikUfWPfJekP/7fONs8tVmF5ygSQZjD7Ja8bqN36IzF04Dc/NTS/MO1A8MFV6y9uzYY1PgMy9uXomjYiWz1a2g==
   dependencies:
     "@dword-design/functions" "^2.2.2"
 
@@ -8334,9 +8342,9 @@ lru-cache@^6.0.0:
     yallist "^4.0.0"
 
 make-cli@^1.0.16, make-cli@^1.0.9:
-  version "1.0.28"
-  resolved "https://registry.yarnpkg.com/make-cli/-/make-cli-1.0.28.tgz#afe445f1729d880e50a754e2a62f9dcd7aeacdd1"
-  integrity sha512-svOp7rd44D/FB79+LRtHneCcrJIXcRNlP629Q3raeuRXADuAgYLlR+kRTjXxIeva7Eru8m4zHcs6zW7zHbbMmw==
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/make-cli/-/make-cli-1.0.29.tgz#6bbe00f2cd55f409ea3804ad672de13e64ed0534"
+  integrity sha512-V4XyVwvl81Tnn4/A9k+ryftHv07rUflj8n6bdV7thzqspyeFU8LnIaL6qmEe3nW6JTwLEk66Aw5Xn4wU6v0v+Q==
   dependencies:
     "@dword-design/functions" "^2.2.2"
     commander "^7.0.0"
@@ -8735,9 +8743,9 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
 mocha-ui-exports-auto-describe@^1.0.0, mocha-ui-exports-auto-describe@^1.0.9:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/mocha-ui-exports-auto-describe/-/mocha-ui-exports-auto-describe-1.0.10.tgz#7c9a5f1d7ed2259964858481dcf170aa91d05f42"
-  integrity sha512-70GhdJMFMr+bQ0Nh6C5w5L4da9YRTqc/B+AH1ETca53PVWzrzvwn9JbiEYU6mXN0/nVyXPL5wsJQWniC89kpmg==
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/mocha-ui-exports-auto-describe/-/mocha-ui-exports-auto-describe-1.0.11.tgz#030306582adddbfc6c1b80fb462f00793e6471fc"
+  integrity sha512-T5xdEZ6vexqXWVNwmEI9vlirE+xZzJqtZPea/Sn6/0LVk30Y6WlEV5oZFhmqtJgWt+mjCVwqyNYE/5U0omwI5w==
   dependencies:
     "@dword-design/functions" "^2.7.2"
     mocha "^8.0.0"
@@ -9349,6 +9357,11 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
+nuxt-sourcemaps-abs-sourceroot@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/nuxt-sourcemaps-abs-sourceroot/-/nuxt-sourcemaps-abs-sourceroot-1.0.0.tgz#685dc61b212746adf21f6dbc530a16c479f70ad4"
+  integrity sha512-tGCPBKvg0XIOtL5VuIwlQGCNsH2t+QR7DMSNJJ6rmlWGk14bEM5lEhr0d4SxH4Vd28PGyKWbq7w67FM4f6hDGg==
+
 nuxt@^2.15.3:
   version "2.15.3"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.3.tgz#6262707de8a824df0718fc88653c74a916aa5122"
@@ -9596,9 +9609,9 @@ osenv@^0.1.4, osenv@^0.1.5:
     os-tmpdir "^1.0.0"
 
 output-files@^1.1.20, output-files@^1.1.7:
-  version "1.1.21"
-  resolved "https://registry.yarnpkg.com/output-files/-/output-files-1.1.21.tgz#ef754c1752beaf678006b2a40544dd97c9d505ed"
-  integrity sha512-NtoPRnN06nRTJK4cqnsjAzMIZ+6Mt0Zv8UlQyQVX7WJGRF9t5l6Mp1C+u0iC83sR7PRLtw2C+0LHHslBT+kutQ==
+  version "1.1.22"
+  resolved "https://registry.yarnpkg.com/output-files/-/output-files-1.1.22.tgz#bacb9669e0debb71982f820b7275e267f987784a"
+  integrity sha512-+DWvZ756mRXposvPQ0wsw9jLIp/OpfbdZ2nhyQY7dXUVqqupRbUMBo3QiWNKFZXh2W9KYaX2iGTvgc8GHnE6vA==
   dependencies:
     "@dword-design/functions" "^2.2.2"
     fs-extra "^9.0.0"
@@ -10974,6 +10987,15 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+"puppeteer-to-istanbul@github:dword-design/puppeteer-to-istanbul#fork":
+  version "1.4.0"
+  resolved "https://codeload.github.com/dword-design/puppeteer-to-istanbul/tar.gz/cdce72d9b1ff439ee82b9d17c46197c9445f1560"
+  dependencies:
+    clone "^2.1.2"
+    mkdirp "^1.0.4"
+    v8-to-istanbul "^1.2.1"
+    yargs "^15.3.1"
+
 puppeteer@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-8.0.0.tgz#a236669118aa795331c2d0ca19877159e7664705"
@@ -11107,9 +11129,9 @@ react-is@^16.8.1:
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
 react-is@^17.0.1:
-  version "17.0.1"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
-  integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
+  integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
 read-cache@^1.0.0:
   version "1.0.0"
@@ -11495,9 +11517,9 @@ resolve-global@1.0.0, resolve-global@^1.0.0:
     global-dirs "^0.1.1"
 
 resolve-tagged-template@^1.0.0:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/resolve-tagged-template/-/resolve-tagged-template-1.0.9.tgz#ee05db2de4b613e0f3e9855a5dfbc2188846e4aa"
-  integrity sha512-2K9DIhxh27/3tRzSjXfcPa763a7zgkUWXxRIrGiWD75y1m/W8t3QblaL3QuBFkrC/CDxHt/1zhtyHjEuvDF1XA==
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/resolve-tagged-template/-/resolve-tagged-template-1.0.10.tgz#529a53dbec3b98cfa6bb0a2c40ec7f6795400d1b"
+  integrity sha512-MuFeNhhiDBYsbNHSW4yWsg8QenuVOCxOV0fa8gmJp3+l6R7x/bBK0eHbXPTv21YexrXNiyyiENwDw/zuJ9BxFg==
   dependencies:
     "@dword-design/functions" "^2.2.2"
 
@@ -13058,6 +13080,13 @@ unicode-property-aliases-ecmascript@^1.0.4:
   resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.1.0.tgz#dd57a99f6207bedff4628abefb94c50db941c8f4"
   integrity sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==
 
+unify-mocha-output@^1.0.2:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/unify-mocha-output/-/unify-mocha-output-1.0.4.tgz#911dd56be93c1f65b7fa9859927bf11f25c0b688"
+  integrity sha512-9LC9u6rJnQFJNrNsbZQv2iUCObbOamGbg5V0BQ5z7JpxPzUaRBRNpW4mn6YEyVPcP8tdYdnIRe9hENCggkv2dw==
+  dependencies:
+    "@dword-design/functions" "^1.2.1"
+
 union-value@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.1.tgz#0b6fe7b835aecda61c6ea4d4f02c14221e109847"
@@ -13296,6 +13325,11 @@ v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
+
+v8-to-istanbul@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/v8-to-istanbul/-/v8-to-istanbul-1.2.1.tgz#8f63a94b7f91243f5dcc6a495540b5653beb1279"
+  integrity sha512-NglPycIwSQeSJj7VJ6L8vTsPKC9MG5Lcx4n3SvYqNHzklbMI4dGcLJnkLPEPJ3uB8UyTdWviMhM0Ptq+xD5UFQ==
 
 validate-npm-package-license@^3.0.1, validate-npm-package-license@^3.0.4:
   version "3.0.4"
@@ -13628,9 +13662,9 @@ widest-line@^3.1.0:
     string-width "^4.0.0"
 
 with-local-tmp-dir@^2.2.15:
-  version "2.2.16"
-  resolved "https://registry.yarnpkg.com/with-local-tmp-dir/-/with-local-tmp-dir-2.2.16.tgz#ccacfe876181ed6166d951803f0ee1a25fcac948"
-  integrity sha512-ZpC9777/cE/fxO2DPLU/6HQ/7v9c8R+Ki2M9gFHUqpApp1/9dfC088us5YDhkUqv1P0QvFNBkbuVSmWYYCxMQg==
+  version "2.2.17"
+  resolved "https://registry.yarnpkg.com/with-local-tmp-dir/-/with-local-tmp-dir-2.2.17.tgz#6cc8291a83f89585148b9648fb515868d7cf8aa8"
+  integrity sha512-IgRoOZyJIdh0OQCz84Lw/QzP5H2Jxfwq9nwKMErcheBXxcblsqbaELyYfIPe8x3xC1MQUjdHCvtGyB88UUSLtA==
   dependencies:
     "@dword-design/chdir" "^1.0.0"
     tmp-promise "^3.0.0"
@@ -13858,7 +13892,7 @@ yargs@^14.2.3:
     y18n "^4.0.0"
     yargs-parser "^15.0.1"
 
-yargs@^15.0.2, yargs@^15.1.0:
+yargs@^15.0.2, yargs@^15.1.0, yargs@^15.3.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   integrity sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==

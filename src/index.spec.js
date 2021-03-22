@@ -2,11 +2,12 @@ import { endent } from '@dword-design/functions'
 import packageName from 'depcheck-package-name'
 import execa from 'execa'
 import outputFiles from 'output-files'
+import unifyMochaOutput from 'unify-mocha-output'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default {
-  'client mode': () =>
-    withLocalTmpDir(async () => {
+  'client mode': function () {
+    return withLocalTmpDir(async () => {
       await outputFiles({
         'index.spec.js': endent`
         import { endent } from '@dword-design/functions'
@@ -55,12 +56,33 @@ export default {
 
       `,
       })
-      await execa.command(
-        `mocha --ui ${packageName`mocha-ui-exports-auto-describe`} --timeout 80000 index.spec.js`
+      const output = await execa(
+        'nyc',
+        [
+          '--reporter',
+          'lcov',
+          '--reporter',
+          'text',
+          '--cwd',
+          process.cwd(),
+          '--extension',
+          '.vue',
+          '--exclude',
+          'tmp-*',
+          'mocha',
+          '--ui',
+          packageName`mocha-ui-exports-auto-describe`,
+          '--timeout',
+          80000,
+          'index.spec.js',
+        ],
+        { all: true }
       )
-    }),
-  works: () =>
-    withLocalTmpDir(async () => {
+      expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
+    })
+  },
+  works() {
+    return withLocalTmpDir(async () => {
       await outputFiles({
         'index.spec.js': endent`
         import { endent } from '@dword-design/functions'
@@ -101,8 +123,29 @@ export default {
 
       `,
       })
-      await execa.command(
-        `mocha --ui ${packageName`mocha-ui-exports-auto-describe`} --timeout 80000 index.spec.js`
+      const output = await execa(
+        'nyc',
+        [
+          '--reporter',
+          'lcov',
+          '--reporter',
+          'text',
+          '--cwd',
+          process.cwd(),
+          '--extension',
+          '.vue',
+          '--exclude',
+          'tmp-*',
+          'mocha',
+          '--ui',
+          packageName`mocha-ui-exports-auto-describe`,
+          '--timeout',
+          80000,
+          'index.spec.js',
+        ],
+        { all: true }
       )
-    }),
+      expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
+    })
+  },
 }
