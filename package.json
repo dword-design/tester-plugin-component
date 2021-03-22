@@ -23,6 +23,7 @@
     "@dword-design/functions": "^1.2.1",
     "depcheck-package-name": "^1.0.2",
     "nuxt": "^2.15.3",
+    "nuxt-sourcemaps-abs-sourceroot": "^1.0.0",
     "output-files": "^1.1.20",
     "vue": "^2.6.12",
     "with-local-tmp-dir": "^2.2.15"
@@ -31,11 +32,12 @@
     "@dword-design/base": "^7.8.2",
     "@dword-design/puppeteer": "^3.0.0",
     "@dword-design/tester": "^1.2.0",
-    "@dword-design/tester-plugin-puppeteer": "^1.0.2",
+    "@dword-design/tester-plugin-puppeteer": "^2.0.0",
     "execa": "^5.0.0",
     "globby": "^11.0.2",
     "mocha": "^8.3.2",
-    "mocha-ui-exports-auto-describe": "^1.0.9"
+    "mocha-ui-exports-auto-describe": "^1.0.9",
+    "unify-mocha-output": "^1.0.2"
   },
   "publishConfig": {
     "access": "public"

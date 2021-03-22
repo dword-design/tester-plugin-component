@@ -23,6 +23,7 @@ export default (options = {}) => ({
         const nuxt = new Nuxt({
           createRequire: 'native',
           dev: true,
+          modules: [packageName`nuxt-sourcemaps-abs-sourceroot`],
           plugins: [
             {
               mode: options.pluginMode,
