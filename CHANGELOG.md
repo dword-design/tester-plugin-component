@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/dword-design/tester-plugin-component/compare/v1.1.3...v1.1.4) (2021-03-23)
+
+
+### Bug Fixes
+
+* move componentPath to test config and allow to override nuxt config via nuxtConfig ([#9](https://github.com/dword-design/tester-plugin-component/issues/9)) ([1ed7aa1](https://github.com/dword-design/tester-plugin-component/commit/1ed7aa10b2f706f686bbde8820c69a3a667d8dc8))
+
 ## [1.1.3](https://github.com/dword-design/tester-plugin-component/compare/v1.1.2...v1.1.3) (2021-03-22)
 
 
