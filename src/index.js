@@ -7,28 +7,34 @@ import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default (options = {}) => ({
   transform: test => {
-    test = { test: () => {}, ...test }
+    test = { nuxtConfig: {}, test: () => {}, ...test }
     return function () {
       return withLocalTmpDir(async () => {
         await outputFiles({
           'pages/index.vue': test.page,
           'plugins/plugin.js': endent`
-          import Self from '${test.componentPath |> replace(/\\/g, '/')}'
+          import Self from '${options.componentPath |> replace(/\\/g, '/')}'
           import Vue from '${packageName`vue`}'
 
           Vue.component('Self', Self)
 
         `,
+          ...test.files,
         })
         const nuxt = new Nuxt({
           createRequire: 'native',
           dev: true,
-          modules: [packageName`nuxt-sourcemaps-abs-sourceroot`],
+          ...test.nuxtConfig,
+          modules: [
+            packageName`nuxt-sourcemaps-abs-sourceroot`,
+            ...(test.nuxtConfig.modules || []),
+          ],
           plugins: [
             {
               mode: options.pluginMode,
               src: P.resolve('plugins', 'plugin.js'),
             },
+            ...(test.nuxtConfig.plugins || []),
           ],
         })
         await new Builder(nuxt).build()
