@@ -92,9 +92,9 @@ export default {
         export default tester({
           works: {
             files: {
-              'modules/other.js': "export default () => console.log('foobarbaz')",
+              'node_modules/foobar.js': "export default () => console.log('foobarbaz')",
             },
-            nuxtConfig: { build: { quiet: false }, modules: ['~/modules/other'] },
+            nuxtConfig: { build: { quiet: false }, modules: ['foobar'] },
             page: endent\`
               <template>
                 <self class="foo" />

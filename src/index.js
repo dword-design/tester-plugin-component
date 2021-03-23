@@ -1,5 +1,6 @@
 import { endent, replace } from '@dword-design/functions'
 import packageName from 'depcheck-package-name'
+import esm from 'esm'
 import { Builder, Nuxt } from 'nuxt'
 import outputFiles from 'output-files'
 import P from 'path'
@@ -22,7 +23,7 @@ export default (options = {}) => ({
           ...test.files,
         })
         const nuxt = new Nuxt({
-          createRequire: 'native',
+          createRequire: () => esm(module),
           dev: true,
           ...test.nuxtConfig,
           modules: [
