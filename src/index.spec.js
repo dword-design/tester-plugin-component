@@ -17,7 +17,6 @@ export default {
 
         export default tester({
           works: {
-            componentPath: require.resolve('./index.vue'),
             page: endent\`
               <template>
                 <client-only>
@@ -33,7 +32,7 @@ export default {
             },
           },
         }, [
-          self({ pluginMode: 'client' }),
+          self({ pluginMode: 'client', componentPath: require.resolve('./index.vue') }),
           testerPluginPuppeteer(),
         ])
 
@@ -81,6 +80,61 @@ export default {
       expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
     })
   },
+  'nuxt config': () =>
+    withLocalTmpDir(async () => {
+      await outputFiles({
+        'index.spec.js': endent`
+        import { endent } from '@dword-design/functions'
+        import tester from '${packageName`@dword-design/tester`}'
+        import self from '../src'
+        import globby from '${packageName`globby`}'
+
+        export default tester({
+          works: {
+            files: {
+              'modules/other.js': "export default () => console.log('foobarbaz')",
+            },
+            nuxtConfig: { build: { quiet: false }, modules: ['~/modules/other'] },
+            page: endent\`
+              <template>
+                <self class="foo" />
+              </template>
+
+            \`,
+            test: () => {},
+          },
+        }, [
+          self({ componentPath: require.resolve('./index.vue') }),
+        ])
+
+      `,
+        'index.vue': endent`
+        <template>
+          <div>Hello world</div>
+        </template>
+
+      `,
+      })
+      const output = await execa(
+        'nyc',
+        [
+          '--cwd',
+          process.cwd(),
+          '--extension',
+          '.vue',
+          '--exclude',
+          'tmp-*',
+          'mocha',
+          '--ui',
+          packageName`mocha-ui-exports-auto-describe`,
+          '--timeout',
+          80000,
+          'index.spec.js',
+        ],
+        { all: true }
+      )
+      expect(output.all |> unifyMochaOutput).toMatch('foobarbaz')
+    }),
   works() {
     return withLocalTmpDir(async () => {
       await outputFiles({
@@ -93,7 +147,6 @@ export default {
 
         export default tester({
           works: {
-            componentPath: require.resolve('./index.vue'),
             page: endent\`
               <template>
                 <self class="foo" />
@@ -107,7 +160,7 @@ export default {
             },
           },
         }, [
-          self(),
+          self({ componentPath: require.resolve('./index.vue') }),
           testerPluginPuppeteer(),
           {
             after: async () =>
