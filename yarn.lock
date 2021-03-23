@@ -1227,6 +1227,16 @@
     lodash "^4.17.15"
     tinycolor2 "^1.4.1"
 
+"@dword-design/functions@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/functions/-/functions-3.0.0.tgz#38d6bc440d16b89a6ace494422fe4639c30dd1f8"
+  integrity sha512-CBRMb6eRapNeJ3U6TeXtsLwiqmXEyPZ2gtVErdRCTDt6WTJ2bamt6jHlAGylfa8CoPgo+jIHC09EcPw5Qvbc2w==
+  dependencies:
+    delay "^5.0.0"
+    endent "github:dword-design/endent#fork"
+    lodash "^4.17.15"
+    tinycolor2 "^1.4.1"
+
 "@dword-design/puppeteer@^3.0.0":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@dword-design/puppeteer/-/puppeteer-3.0.2.tgz#5efde7f3196a6b828ba76ed605d7271c6ff8b377"
@@ -2085,6 +2095,7 @@
 
 "@vue/babel-preset-jsx@dword-design/jsx#fork-babel-preset-jsx":
   version "1.1.2"
+  uid a73cb9961541a60a66b1b99a69a32e00bc66d336
   resolved "https://codeload.github.com/dword-design/jsx/tar.gz/a73cb9961541a60a66b1b99a69a32e00bc66d336"
   dependencies:
     "@vue/babel-helper-vue-jsx-merge-props" "^1.0.0"
@@ -2841,6 +2852,7 @@ babel-plugin-transform-imports@^2.0.0:
 
 babel-plugin-wildcard@dword-design/babel-plugin-wildcard#fork:
   version "6.0.0"
+  uid "691d11923ee2dcf63e86f205b0a2c998883e3a3c"
   resolved "https://codeload.github.com/dword-design/babel-plugin-wildcard/tar.gz/691d11923ee2dcf63e86f205b0a2c998883e3a3c"
   dependencies:
     rimraf "^2.6.2"
@@ -4517,6 +4529,11 @@ del@^6.0.0:
     rimraf "^3.0.2"
     slash "^3.0.0"
 
+delay@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/delay/-/delay-5.0.0.tgz#137045ef1b96e5071060dd5be60bf9334436bd1d"
+  integrity sha512-ReEBKkIfe4ya47wlPYf/gu5ib6yUG0/Aez0JQZQz94kiWtRQvZIQbTiehsnwHvLSWJnQdhVeqYue7Id1dKr0qw==
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -4567,6 +4584,7 @@ depcheck-parser-babel@^1.2.0:
 
 depcheck@dword-design/depcheck#fork:
   version "0.0.1"
+  uid "8a9eb41006c2c6f9cbd79e4e68bf265e1c1df1dc"
   resolved "https://codeload.github.com/dword-design/depcheck/tar.gz/8a9eb41006c2c6f9cbd79e4e68bf265e1c1df1dc"
   dependencies:
     "@babel/parser" "^7.8.4"
@@ -5074,6 +5092,7 @@ eslint-config-prettier@^8.0.0:
 
 eslint-import-resolver-babel-module@dword-design/eslint-import-resolver-babel-module#fork:
   version "5.1.2"
+  uid "97550c5b7626a9cf582ea2392b9749702a27473d"
   resolved "https://codeload.github.com/dword-design/eslint-import-resolver-babel-module/tar.gz/97550c5b7626a9cf582ea2392b9749702a27473d"
   dependencies:
     pkg-up "^2.0.0"
@@ -10961,6 +10980,7 @@ punycode@^2.1.0, punycode@^2.1.1:
 
 puppeteer-to-istanbul@dword-design/puppeteer-to-istanbul#fork:
   version "1.4.0"
+  uid cdce72d9b1ff439ee82b9d17c46197c9445f1560
   resolved "https://codeload.github.com/dword-design/puppeteer-to-istanbul/tar.gz/cdce72d9b1ff439ee82b9d17c46197c9445f1560"
   dependencies:
     clone "^2.1.2"
