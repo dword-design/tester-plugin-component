@@ -64,7 +64,7 @@ $ yarn add @dword-design/tester-plugin-component
 <!-- LICENSE/ -->
 ## Contribute
 
-Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/tester-plugin-component/issues) or [pull request](https://github.com/dword-design/tester-plugin-component/pulls)! ⚙️
+Are you missing something or want to contribute? Feel free to file an [issue](https://github.com/dword-design/tester-plugin-component/issues) or a [pull request](https://github.com/dword-design/tester-plugin-component/pulls)! ⚙️
 
 ## Support
 
