@@ -9,6 +9,7 @@ import withLocalTmpDir from 'with-local-tmp-dir'
 export default (options = {}) => ({
   transform: test => {
     test = { nuxtConfig: {}, test: () => {}, ...test }
+
     return function () {
       return withLocalTmpDir(async () => {
         await outputFiles({
@@ -22,6 +23,7 @@ export default (options = {}) => ({
         `,
           ...test.files,
         })
+
         const nuxt = new Nuxt({
           createRequire: () => esm(module),
           dev: true,
