@@ -81,6 +81,45 @@ export default {
       expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
     })
   },
+  error: () =>
+    withLocalTmpDir(async () => {
+      await outputFiles({
+        'index.spec.js': endent`
+      import tester from '${packageName`@dword-design/tester`}'
+      import self from '../src'
+
+      export default tester({
+        works: {
+          test: () => {
+            throw new Error('Foo bar baz')
+          },
+        },
+      }, [
+        self({ componentPath: require.resolve('./index.vue') }),
+      ])
+
+    `,
+        'index.vue': endent`
+      <template>
+        <div>Hello world</div>
+      </template>
+
+    `,
+      })
+      await expect(
+        execa(
+          'mocha',
+          [
+            '--ui',
+            packageName`mocha-ui-exports-auto-describe`,
+            '--timeout',
+            80000,
+            'index.spec.js',
+          ],
+          { all: true }
+        )
+      ).rejects.toThrow('Foo bar baz')
+    }),
   'nuxt config': () =>
     withLocalTmpDir(async () => {
       await outputFiles({

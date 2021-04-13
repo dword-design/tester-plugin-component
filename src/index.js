@@ -42,8 +42,11 @@ export default (options = {}) => ({
         })
         await new Builder(nuxt).build()
         await nuxt.listen()
-        await test.test.call(this)
-        await nuxt.close()
+        try {
+          await test.test.call(this)
+        } finally {
+          await nuxt.close()
+        }
       })
     }
   },
