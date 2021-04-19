@@ -37,7 +37,7 @@
     "execa": "^5.0.0",
     "globby": "^11.0.2",
     "mocha": "^8.3.2",
-    "mocha-ui-exports-auto-describe": "^1.0.9",
+    "mocha-ui-exports-auto-describe": "^1.0.14",
     "unify-mocha-output": "^1.0.2"
   },
   "publishConfig": {
