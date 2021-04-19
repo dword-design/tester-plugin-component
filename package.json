@@ -25,7 +25,7 @@
     "esm": "^3.2.25",
     "nuxt": "^2.15.3",
     "nuxt-sourcemaps-abs-sourceroot": "^1.0.0",
-    "output-files": "^1.1.20",
+    "output-files": "^1.1.24",
     "vue": "^2.6.12",
     "with-local-tmp-dir": "^2.2.15"
   },
