@@ -1,7 +1,7 @@
 {
   "name": "@dword-design/tester-plugin-component",
   "version": "1.1.9",
-  "description": "",
+  "description": null,
   "repository": "dword-design/tester-plugin-component",
   "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
@@ -42,5 +42,7 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "homepage": null,
+  "keywords": []
 }
