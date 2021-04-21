@@ -1,3 +1,11 @@
+## [1.1.10](https://github.com/dword-design/tester-plugin-component/compare/v1.1.9...v1.1.10) (2021-04-21)
+
+
+### Bug Fixes
+
+* update config files ([c9b2d82](https://github.com/dword-design/tester-plugin-component/commit/c9b2d82e6ffa3c8d1c8785c1fdcc8bde1746cb20))
+* updated package.json[description] ([#29](https://github.com/dword-design/tester-plugin-component/issues/29)) ([4e62168](https://github.com/dword-design/tester-plugin-component/commit/4e62168e869b1dfb99158f55123bfb7135e5f902))
+
 ## [1.1.9](https://github.com/dword-design/tester-plugin-component/compare/v1.1.8...v1.1.9) (2021-04-13)
 
 
