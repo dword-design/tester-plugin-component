@@ -27,7 +27,7 @@
     "nuxt-sourcemaps-abs-sourceroot": "^1.0.0",
     "output-files": "^1.1.20",
     "vue": "^2.6.12",
-    "with-local-tmp-dir": "^2.2.15"
+    "with-local-tmp-dir": "^3.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^7.8.2",
