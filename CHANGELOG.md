@@ -1,3 +1,11 @@
+## [1.1.12](https://github.com/dword-design/tester-plugin-component/compare/v1.1.11...v1.1.12) (2021-04-26)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/puppeteer to v4 ([#33](https://github.com/dword-design/tester-plugin-component/issues/33)) ([1801aab](https://github.com/dword-design/tester-plugin-component/commit/1801aab02358e993f27a68e5bf48d9f56ce33cf2))
+* update dependency with-local-tmp-dir to v3 ([#28](https://github.com/dword-design/tester-plugin-component/issues/28)) ([0c22b00](https://github.com/dword-design/tester-plugin-component/commit/0c22b0090563cd309e31352c432d848bfc9c8ffe))
+
 ## [1.1.11](https://github.com/dword-design/tester-plugin-component/compare/v1.1.10...v1.1.11) (2021-04-22)
 
 
