@@ -39,6 +39,9 @@
     "mocha-ui-exports-auto-describe": "^1.0.9",
     "unify-mocha-output": "^1.0.2"
   },
+  "engines": {
+    "node": ">=12"
+  },
   "publishConfig": {
     "access": "public"
   }
