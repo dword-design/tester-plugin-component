@@ -1363,6 +1363,16 @@
     lodash "^4.17.15"
     tinycolor2 "^1.4.1"
 
+"@dword-design/functions@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@dword-design/functions/-/functions-4.0.0.tgz#9408fbd1b474a55509fda84699a448ae217e0490"
+  integrity sha512-ceh7fcd9BGuBus/4F6Ltyk+oitow8RQ+dEUfwCqQP79EdIuhvW+vQYQ0F7+Ubj/oO1fZLTHn0VEfpJxdnf+S5A==
+  dependencies:
+    delay "^5.0.0"
+    endent "github:dword-design/endent#fork"
+    lodash "^4.17.15"
+    tinycolor2 "^1.4.1"
+
 "@dword-design/puppeteer@^4.0.0":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@dword-design/puppeteer/-/puppeteer-4.0.1.tgz#0cf9b2109c2928264c246af8ac932cf04cebfb59"
@@ -5001,7 +5011,7 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0, end-of-stream@^1.4.1:
   dependencies:
     once "^1.4.0"
 
-endent@dword-design/endent#fork:
+endent@dword-design/endent#fork, "endent@github:dword-design/endent#fork":
   version "1.4.0"
   uid be5433db67eaec07c6c9d00ba3bed2ed946dc664
   resolved "https://codeload.github.com/dword-design/endent/tar.gz/be5433db67eaec07c6c9d00ba3bed2ed946dc664"
@@ -8586,12 +8596,20 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-mocha-ui-exports-auto-describe@^1.0.0, mocha-ui-exports-auto-describe@^1.0.9:
+mocha-ui-exports-auto-describe@^1.0.0:
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/mocha-ui-exports-auto-describe/-/mocha-ui-exports-auto-describe-1.0.17.tgz#8ee6407eaa1f405df8f610e25ebd3e03d57b413a"
   integrity sha512-EPj9sGevNrGzCPzvzZNYDB5X9QlnUAHmINaQhbuWN4UY+N6AEAVYCci3C7Y/tn3PMSkKZ/KiSKxjM739k8ekVA==
   dependencies:
     "@dword-design/functions" "^3.0.0"
+    mocha "^8.0.0"
+
+mocha-ui-exports-auto-describe@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/mocha-ui-exports-auto-describe/-/mocha-ui-exports-auto-describe-2.0.1.tgz#c76554b69741141c07b69e6e8b622f2e646d5950"
+  integrity sha512-K2sFmOfci7T0OobU6TdFC9MKH9mg59V2KMVuR5oCHggThLXb0iEVVp3OQeuMiFSoSoG+x8T4Unghoezk7csV1g==
+  dependencies:
+    "@dword-design/functions" "^4.0.0"
     mocha "^8.0.0"
 
 mocha@^8.0.0, mocha@^8.3.2:
