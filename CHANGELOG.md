@@ -1,3 +1,24 @@
+# [2.0.0](https://github.com/dword-design/tester-plugin-component/compare/v1.1.14...v2.0.0) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v8 ([#36](https://github.com/dword-design/tester-plugin-component/issues/36)) ([f98d6d5](https://github.com/dword-design/tester-plugin-component/commit/f98d6d519c69ac76e0b64998bff0f20f6e126789))
+* update dependency @dword-design/tester to v2 ([#39](https://github.com/dword-design/tester-plugin-component/issues/39)) ([38414c7](https://github.com/dword-design/tester-plugin-component/commit/38414c77c4f41c040023c372ee7b8efe0759d3ee))
+* update dependency depcheck-package-name to v2 ([#40](https://github.com/dword-design/tester-plugin-component/issues/40)) ([24851e6](https://github.com/dword-design/tester-plugin-component/commit/24851e63c62e924268bdcedfaa04b7e6ecda7e45))
+* update dependency output-files to v2 ([#43](https://github.com/dword-design/tester-plugin-component/issues/43)) ([d59af7d](https://github.com/dword-design/tester-plugin-component/commit/d59af7d1f02a3553f0d0b44b7d4a31c5610aaef1))
+* update dependency unify-mocha-output to v2 ([#44](https://github.com/dword-design/tester-plugin-component/issues/44)) ([3725444](https://github.com/dword-design/tester-plugin-component/commit/37254446efac282c7960f4dd374cbc115a843aa9))
+* update dependency with-local-tmp-dir to v4 ([#45](https://github.com/dword-design/tester-plugin-component/issues/45)) ([d394dec](https://github.com/dword-design/tester-plugin-component/commit/d394dec93867fc9e0e0f51f238ba26ebcbf12989))
+
+
+### BREAKING CHANGES
+
+* require Node.js >= 12
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+Co-authored-by: Sebastian Landwehr <info@dword-design.de>
+Co-authored-by: GitHub Actions <actions@github.com>
+
 ## [1.1.14](https://github.com/dword-design/tester-plugin-component/compare/v1.1.13...v1.1.14) (2021-05-03)
 
 
