@@ -9116,10 +9116,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-sourcemaps-abs-sourceroot@^1.0.0:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/nuxt-sourcemaps-abs-sourceroot/-/nuxt-sourcemaps-abs-sourceroot-1.0.4.tgz#4157dc695149f25d8c8b9b8f26788643c0682163"
-  integrity sha512-J/cPSOuS9Xy1pHuuaIam7ny0mfZRwBnk9x3qpHJJtW3bpg6EW3DcxcXa1mezJ9Pt7/MmeAHcB+vdgqh7dc/KJQ==
+nuxt-sourcemaps-abs-sourceroot@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/nuxt-sourcemaps-abs-sourceroot/-/nuxt-sourcemaps-abs-sourceroot-2.0.1.tgz#fb4a9b234fa533f57a51ec819a536b033b2eb5a5"
+  integrity sha512-wY8MPQ7EPT4Ca3TOFzv4+Vdbio0YBpwAGBfzU9iMjmKivGb92ww6J32D0RhNnOPVBrwuoCmzhY6wJbVAXCVpnQ==
 
 nuxt@2.15.2:
   version "2.15.2"
