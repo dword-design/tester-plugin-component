@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/dword-design/tester-plugin-component/compare/v2.0.0...v2.0.1) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4 ([#37](https://github.com/dword-design/tester-plugin-component/issues/37)) ([8fac037](https://github.com/dword-design/tester-plugin-component/commit/8fac03740041bbb586a2f4ea8310c3e69d7468f7))
+* update dependency mocha-ui-exports-auto-describe to v2 ([#41](https://github.com/dword-design/tester-plugin-component/issues/41)) ([051a658](https://github.com/dword-design/tester-plugin-component/commit/051a658ea1fd5a2e5c5909a6698cd87ad15cc3f8))
+* update dependency nuxt-sourcemaps-abs-sourceroot to v2 ([#42](https://github.com/dword-design/tester-plugin-component/issues/42)) ([2bed005](https://github.com/dword-design/tester-plugin-component/commit/2bed0058132cb56a47e69959bba347a779242691))
+
 # [2.0.0](https://github.com/dword-design/tester-plugin-component/compare/v1.1.14...v2.0.0) (2021-05-04)
 
 
