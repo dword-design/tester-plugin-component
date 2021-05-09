@@ -1288,7 +1288,7 @@
     commitizen "^4.0.3"
     constant-case "^3.0.3"
     cz-conventional-changelog "^3.1.0"
-    depcheck "github:dword-design/depcheck#fork"
+    depcheck dword-design/depcheck#fork
     depcheck-detector-execa "^1.2.1"
     depcheck-detector-package-name "^1.0.0"
     depcheck-package-name "^1.0.0"
@@ -1391,7 +1391,7 @@
   integrity sha512-ceh7fcd9BGuBus/4F6Ltyk+oitow8RQ+dEUfwCqQP79EdIuhvW+vQYQ0F7+Ubj/oO1fZLTHn0VEfpJxdnf+S5A==
   dependencies:
     delay "^5.0.0"
-    endent "github:dword-design/endent#fork"
+    endent dword-design/endent#fork
     lodash "^4.17.15"
     tinycolor2 "^1.4.1"
 
@@ -2367,7 +2367,6 @@
 
 "@vue/babel-preset-jsx@dword-design/jsx#fork-babel-preset-jsx":
   version "1.1.2"
-  uid a73cb9961541a60a66b1b99a69a32e00bc66d336
   resolved "https://codeload.github.com/dword-design/jsx/tar.gz/a73cb9961541a60a66b1b99a69a32e00bc66d336"
   dependencies:
     "@vue/babel-helper-vue-jsx-merge-props" "^1.0.0"
@@ -3096,7 +3095,6 @@ babel-plugin-transform-imports@^2.0.0:
 
 babel-plugin-wildcard@dword-design/babel-plugin-wildcard#fork:
   version "6.0.0"
-  uid "691d11923ee2dcf63e86f205b0a2c998883e3a3c"
   resolved "https://codeload.github.com/dword-design/babel-plugin-wildcard/tar.gz/691d11923ee2dcf63e86f205b0a2c998883e3a3c"
   dependencies:
     rimraf "^2.6.2"
@@ -9246,7 +9244,7 @@ nuxt-sourcemaps-abs-sourceroot@^2.0.0:
   resolved "https://registry.yarnpkg.com/nuxt-sourcemaps-abs-sourceroot/-/nuxt-sourcemaps-abs-sourceroot-2.0.1.tgz#fb4a9b234fa533f57a51ec819a536b033b2eb5a5"
   integrity sha512-wY8MPQ7EPT4Ca3TOFzv4+Vdbio0YBpwAGBfzU9iMjmKivGb92ww6J32D0RhNnOPVBrwuoCmzhY6wJbVAXCVpnQ==
 
-nuxt@2.15.5:
+nuxt@~2.15.5:
   version "2.15.5"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.5.tgz#b22d18749c649e0650f64283f30e3eeb74ddcf20"
   integrity sha512-6ioiDTZ5lodq8PbN14quRRLv2XETx07oNx88QskL/4bomqH2nd10fKxzU9tui2IYcHwCuTpafclKpWdkUwBUZQ==
@@ -10834,7 +10832,6 @@ punycode@^2.1.0, punycode@^2.1.1:
 
 puppeteer-to-istanbul@dword-design/puppeteer-to-istanbul#fork:
   version "1.4.0"
-  uid bf9e82538230872bffe68b28c40ec70731afd89a
   resolved "https://codeload.github.com/dword-design/puppeteer-to-istanbul/tar.gz/bf9e82538230872bffe68b28c40ec70731afd89a"
   dependencies:
     clone "^2.1.2"
