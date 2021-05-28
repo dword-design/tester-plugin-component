@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/dword-design/tester-plugin-component/compare/v2.0.3...v2.0.4) (2021-05-28)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#48](https://github.com/dword-design/tester-plugin-component/issues/48)) ([e4b1eac](https://github.com/dword-design/tester-plugin-component/commit/e4b1eac1fcdc18e730cbf442ade8765c048a596d))
+
 ## [2.0.3](https://github.com/dword-design/tester-plugin-component/compare/v2.0.2...v2.0.3) (2021-05-09)
 
 
