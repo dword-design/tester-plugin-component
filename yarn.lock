@@ -1160,12 +1160,12 @@
     "@babel/preset-env" "^7.6.3"
     "@babel/preset-typescript" "^7.13.0"
     "@dword-design/functions" "^4.0.0"
-    "@vue/babel-preset-jsx" "github:dword-design/jsx#fork-babel-preset-jsx"
+    "@vue/babel-preset-jsx" dword-design/jsx#fork-babel-preset-jsx
     babel-plugin-add-module-exports "^1.0.2"
     babel-plugin-macros "^3.0.1"
     babel-plugin-module-resolver "^4.0.0"
     babel-plugin-transform-imports "^2.0.0"
-    babel-plugin-wildcard "github:dword-design/babel-plugin-wildcard#fork"
+    babel-plugin-wildcard dword-design/babel-plugin-wildcard#fork
     depcheck-package-name "^2.0.0"
     find-up "^5.0.0"
     param-case "^3.0.3"
@@ -1208,7 +1208,7 @@
     commitizen "^4.0.3"
     constant-case "^3.0.3"
     cz-conventional-changelog "^3.1.0"
-    depcheck "github:dword-design/depcheck#fork"
+    depcheck dword-design/depcheck#fork
     depcheck-detector-execa "^2.0.0"
     depcheck-detector-package-name "^2.0.0"
     depcheck-package-name "^2.0.0"
@@ -1301,7 +1301,7 @@
   integrity sha512-pIUXdHeV5G4dKwTcAhJcz8hV3B+IxYUBCpoyeYVhTVjidoJ7zxNnpe7fuLQ+yprdzFHllLlnlhixtVLXZY/cGA==
   dependencies:
     delay "^5.0.0"
-    endent "github:dword-design/endent#fork"
+    endent dword-design/endent#fork
     lodash "^4.17.15"
     tinycolor2 "^1.4.1"
 
@@ -1317,7 +1317,7 @@
   resolved "https://registry.yarnpkg.com/@dword-design/tester-plugin-puppeteer/-/tester-plugin-puppeteer-2.1.15.tgz#256f905df12d2bceccfeb103c33a51926e48886a"
   integrity sha512-IaIlcjeA8/G+Iif0UhFxDmjPRSTcdj7z9Ei4t82tNBDcZCd6VYwaqLVdTEEjipq3puxjnkojcRIQIF5yIwVglA==
   dependencies:
-    puppeteer-to-istanbul "github:dword-design/puppeteer-to-istanbul#fork"
+    puppeteer-to-istanbul dword-design/puppeteer-to-istanbul#fork
 
 "@dword-design/tester@^2.0.0":
   version "2.0.4"
@@ -2311,7 +2311,6 @@
 
 "@vue/babel-preset-jsx@github:dword-design/jsx#fork-babel-preset-jsx":
   version "1.1.2"
-  uid a73cb9961541a60a66b1b99a69a32e00bc66d336
   resolved "https://codeload.github.com/dword-design/jsx/tar.gz/a73cb9961541a60a66b1b99a69a32e00bc66d336"
   dependencies:
     "@vue/babel-helper-vue-jsx-merge-props" "^1.0.0"
@@ -2351,7 +2350,6 @@
 
 "@vue/babel-sugar-inject-h@dword-design/jsx#fork-babel-sugar-inject-h":
   version "1.1.2"
-  uid cc36a2200c059120f37944615fb2ec0e22f8f3cc
   resolved "https://codeload.github.com/dword-design/jsx/tar.gz/cc36a2200c059120f37944615fb2ec0e22f8f3cc"
   dependencies:
     "@babel/plugin-syntax-jsx" "^7.2.0"
@@ -3062,7 +3060,6 @@ babel-plugin-transform-imports@^2.0.0:
 
 "babel-plugin-wildcard@github:dword-design/babel-plugin-wildcard#fork":
   version "6.0.0"
-  uid "691d11923ee2dcf63e86f205b0a2c998883e3a3c"
   resolved "https://codeload.github.com/dword-design/babel-plugin-wildcard/tar.gz/691d11923ee2dcf63e86f205b0a2c998883e3a3c"
   dependencies:
     rimraf "^2.6.2"
@@ -4584,7 +4581,6 @@ decode-uri-component@^0.2.0:
 
 dedent@0.7.0, dedent@dword-design/dedent#fork:
   version "0.7.0"
-  uid c8d46e5017d60504657c2d01b59082c0329a12a7
   resolved "https://codeload.github.com/dword-design/dedent/tar.gz/c8d46e5017d60504657c2d01b59082c0329a12a7"
   dependencies:
     babel-plugin-add-module-exports "^1.0.2"
@@ -4736,7 +4732,6 @@ depcheck-parser-babel@^2.0.0:
 
 "depcheck@github:dword-design/depcheck#fork":
   version "0.0.1"
-  uid "8a9eb41006c2c6f9cbd79e4e68bf265e1c1df1dc"
   resolved "https://codeload.github.com/dword-design/depcheck/tar.gz/8a9eb41006c2c6f9cbd79e4e68bf265e1c1df1dc"
   dependencies:
     "@babel/parser" "^7.8.4"
@@ -5078,7 +5073,6 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0, end-of-stream@^1.4.1:
 
 "endent@github:dword-design/endent#fork":
   version "1.4.0"
-  uid be5433db67eaec07c6c9d00ba3bed2ed946dc664
   resolved "https://codeload.github.com/dword-design/endent/tar.gz/be5433db67eaec07c6c9d00ba3bed2ed946dc664"
   dependencies:
     dedent dword-design/dedent#fork
@@ -11055,7 +11049,6 @@ punycode@^2.1.0, punycode@^2.1.1:
 
 "puppeteer-to-istanbul@github:dword-design/puppeteer-to-istanbul#fork":
   version "1.4.0"
-  uid bf9e82538230872bffe68b28c40ec70731afd89a
   resolved "https://codeload.github.com/dword-design/puppeteer-to-istanbul/tar.gz/bf9e82538230872bffe68b28c40ec70731afd89a"
   dependencies:
     clone "^2.1.2"
@@ -13046,9 +13039,9 @@ unicode-property-aliases-ecmascript@^1.0.4:
   integrity sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==
 
 unify-mocha-output@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/unify-mocha-output/-/unify-mocha-output-2.0.2.tgz#a23593a40d176f84653c506d7a98cbaabda20e6e"
-  integrity sha512-2QcxVXOdZiaxy347g/h9LZmhYj6rtGGo8XliMnzsKjU5f6wfjmKKqRDY2d1xQMLXQXRXHfzH/fCyL8Pi7ztRPA==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/unify-mocha-output/-/unify-mocha-output-2.0.3.tgz#64c34129c43287936498a7f3270e07ff11addd8b"
+  integrity sha512-txVQB2QHeeAgIlIaf6HVOZNW6QF4tMySQroLe8oo0GRddHtnfEBmMAObedzg3EYom5wYseO5AQgt4kIgyYjMvw==
   dependencies:
     "@dword-design/functions" "^4.0.0"
 
