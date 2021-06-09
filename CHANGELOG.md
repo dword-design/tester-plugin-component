@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/dword-design/tester-plugin-component/compare/v2.0.4...v2.0.5) (2021-06-09)
+
+
+### Bug Fixes
+
+* update dependency mocha to v9 ([#50](https://github.com/dword-design/tester-plugin-component/issues/50)) ([f75b461](https://github.com/dword-design/tester-plugin-component/commit/f75b46121e89e2d77b68dd8bb0d49d717f297b9b))
+
 ## [2.0.4](https://github.com/dword-design/tester-plugin-component/compare/v2.0.3...v2.0.4) (2021-05-28)
 
 
