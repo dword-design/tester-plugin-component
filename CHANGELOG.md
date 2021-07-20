@@ -1,3 +1,10 @@
+## [2.0.8](https://github.com/dword-design/tester-plugin-component/compare/v2.0.7...v2.0.8) (2021-07-20)
+
+
+### Bug Fixes
+
+* update config files ([c6c4ca6](https://github.com/dword-design/tester-plugin-component/commit/c6c4ca6f72851eb89cbe89916a8d1324cc7a287a))
+
 ## [2.0.7](https://github.com/dword-design/tester-plugin-component/compare/v2.0.6...v2.0.7) (2021-07-06)
 
 
