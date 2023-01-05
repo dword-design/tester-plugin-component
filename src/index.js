@@ -1,6 +1,5 @@
-import { endent, replace } from '@dword-design/functions'
+import { endent } from '@dword-design/functions'
 import packageName from 'depcheck-package-name'
-import esm from 'esm'
 import { Builder, Nuxt } from 'nuxt'
 import outputFiles from 'output-files'
 import P from 'path'
@@ -15,7 +14,7 @@ export default (options = {}) => ({
         await outputFiles({
           'pages/index.vue': test.page,
           'plugins/plugin.js': endent`
-          import Self from '${options.componentPath |> replace(/\\/g, '/')}'
+          import Self from '${options.componentPath.replace(/\\/g, '/')}'
           import Vue from '${packageName`vue`}'
 
           Vue.component('Self', Self)
@@ -25,7 +24,6 @@ export default (options = {}) => ({
         })
 
         const nuxt = new Nuxt({
-          createRequire: () => esm(module),
           dev: true,
           ...test.nuxtConfig,
           modules: [

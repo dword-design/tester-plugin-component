@@ -1,59 +1,66 @@
 import { endent } from '@dword-design/functions'
+import tester from '@dword-design/tester'
+import testerPluginTmpDir from '@dword-design/tester-plugin-tmp-dir'
 import packageName from 'depcheck-package-name'
-import execa from 'execa'
+import { execa } from 'execa'
 import outputFiles from 'output-files'
 import unifyMochaOutput from 'unify-mocha-output'
-import withLocalTmpDir from 'with-local-tmp-dir'
 
-export default {
-  'client mode': function () {
-    return withLocalTmpDir(async () => {
+export default tester(
+  {
+    async 'client mode'() {
       await outputFiles({
         'index.spec.js': endent`
-        import { endent } from '@dword-design/functions'
-        import tester from '${packageName`@dword-design/tester`}'
-        import self from '../src'
-        import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
+      import { endent } from '@dword-design/functions'
+      import tester from '${packageName`@dword-design/tester`}'
+      import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
+      import { expect } from 'expect'
+      import { createRequire } from 'module'
 
-        export default tester({
-          works: {
-            page: endent\`
-              <template>
-                <client-only>
-                  <self class="foo" />
-                </client-only>
-              </template>
+      import self from '../src/index.js'
 
-            \`,
-            async test() {
-              await this.page.goto('http://localhost:3000')
-              const foo = await this.page.waitForSelector('.foo')
-              expect(await foo.evaluate(el => el.innerText)).toEqual('Hello world')
-            },
+      const _require = createRequire(import.meta.url)
+
+      export default tester({
+        works: {
+          page: endent\`
+            <template>
+              <client-only>
+                <self class="foo" />
+              </client-only>
+            </template>
+
+          \`,
+          async test() {
+            await this.page.goto('http://localhost:3000')
+            const foo = await this.page.waitForSelector('.foo')
+            expect(await foo.evaluate(el => el.innerText)).toEqual('Hello world')
           },
-        }, [
-          self({ pluginMode: 'client', componentPath: require.resolve('./index.vue') }),
-          testerPluginPuppeteer(),
-        ])
+        },
+      }, [
+        self({ pluginMode: 'client', componentPath: _require.resolve('./index.vue') }),
+        testerPluginPuppeteer(),
+      ])
 
-      `,
+    `,
         'index.vue': endent`
-        <template>
-          <div>{{ value }}</div>
-        </template>
+      <template>
+        <div>{{ value }}</div>
+      </template>
 
-        <script>
-        export default {
-          computed: {
-            value: () => {
-              window.foo = 'Hello world'
-              return window.foo
-            }
+      <script>
+      export default {
+        computed: {
+          value: () => {
+            window.foo = 'Hello world'
+            return window.foo
           }
         }
-        </script>
+      }
+      </script>
 
-      `,
+    `,
+        'package.json': JSON.stringify({ type: 'module' }),
       })
 
       const output = await execa(
@@ -79,32 +86,35 @@ export default {
         { all: true }
       )
       expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
-    })
-  },
-  error: () =>
-    withLocalTmpDir(async () => {
+    },
+    error: async () => {
       await outputFiles({
         'index.spec.js': endent`
-      import tester from '${packageName`@dword-design/tester`}'
-      import self from '../src'
+    import tester from '${packageName`@dword-design/tester`}'
+    import { createRequire } from 'module'
 
-      export default tester({
-        works: {
-          test: () => {
-            throw new Error('Foo bar baz')
-          },
+    import self from '../src/index.js'
+
+    const _require = createRequire(import.meta.url)
+
+    export default tester({
+      works: {
+        test: () => {
+          throw new Error('Foo bar baz')
         },
-      }, [
-        self({ componentPath: require.resolve('./index.vue') }),
-      ])
+      },
+    }, [
+      self({ componentPath: _require.resolve('./index.vue') }),
+    ])
 
-    `,
+  `,
         'index.vue': endent`
-      <template>
-        <div>Hello world</div>
-      </template>
+    <template>
+      <div>Hello world</div>
+    </template>
 
-    `,
+  `,
+        'package.json': JSON.stringify({ type: 'module' }),
       })
       await expect(
         execa(
@@ -119,41 +129,45 @@ export default {
           { all: true }
         )
       ).rejects.toThrow('Foo bar baz')
-    }),
-  'nuxt config': () =>
-    withLocalTmpDir(async () => {
+    },
+    'nuxt config': async () => {
       await outputFiles({
         'index.spec.js': endent`
-        import { endent } from '@dword-design/functions'
-        import tester from '${packageName`@dword-design/tester`}'
-        import self from '../src'
-        import globby from '${packageName`globby`}'
+      import { endent } from '@dword-design/functions'
+      import tester from '${packageName`@dword-design/tester`}'
+      import { globby } from '${packageName`globby`}'
+      import { createRequire } from 'module'
 
-        export default tester({
-          works: {
-            files: {
-              'node_modules/foobar.js': "export default () => console.log('foobarbaz')",
-            },
-            nuxtConfig: { build: { quiet: false }, modules: ['foobar'] },
-            page: endent\`
-              <template>
-                <self class="foo" />
-              </template>
+      import self from '../src/index.js'
 
-            \`,
-            test: () => {},
+      const _require = createRequire(import.meta.url)
+
+      export default tester({
+        works: {
+          files: {
+            'node_modules/foobar.js': "export default () => console.log('foobarbaz')",
           },
-        }, [
-          self({ componentPath: require.resolve('./index.vue') }),
-        ])
+          nuxtConfig: { build: { quiet: false }, modules: ['foobar'] },
+          page: endent\`
+            <template>
+              <self class="foo" />
+            </template>
 
-      `,
+          \`,
+          test: () => {},
+        },
+      }, [
+        self({ componentPath: _require.resolve('./index.vue') }),
+      ])
+
+    `,
         'index.vue': endent`
-        <template>
-          <div>Hello world</div>
-        </template>
+      <template>
+        <div>Hello world</div>
+      </template>
 
-      `,
+    `,
+        'package.json': JSON.stringify({ type: 'module' }),
       })
 
       const output = await execa(
@@ -175,47 +189,51 @@ export default {
         { all: true }
       )
       expect(output.all |> unifyMochaOutput).toMatch('foobarbaz')
-    }),
-  works() {
-    return withLocalTmpDir(async () => {
+    },
+    async works() {
       await outputFiles({
         'index.spec.js': endent`
-        import { endent } from '@dword-design/functions'
-        import tester from '${packageName`@dword-design/tester`}'
-        import self from '../src'
-        import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
-        import globby from '${packageName`globby`}'
+      import { endent } from '@dword-design/functions'
+      import tester from '${packageName`@dword-design/tester`}'
+      import self from '../src/index.js'
+      import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
+      import { globby } from '${packageName`globby`}'
+      import { createRequire } from 'module'
+      import { expect } from 'expect'
 
-        export default tester({
-          works: {
-            page: endent\`
-              <template>
-                <self class="foo" />
-              </template>
+      const _require = createRequire(import.meta.url)
 
-            \`,
-            async test() {
-              await this.page.goto('http://localhost:3000')
-              const foo = await this.page.waitForSelector('.foo')
-              expect(await foo.evaluate(el => el.innerText)).toEqual('Hello world')
-            },
+      export default tester({
+        works: {
+          page: endent\`
+            <template>
+              <self class="foo" />
+            </template>
+
+          \`,
+          async test() {
+            await this.page.goto('http://localhost:3000')
+            const foo = await this.page.waitForSelector('.foo')
+            expect(await foo.evaluate(el => el.innerText)).toEqual('Hello world')
           },
-        }, [
-          self({ componentPath: require.resolve('./index.vue') }),
-          testerPluginPuppeteer(),
-          {
-            after: async () =>
-              expect(await globby('*', { onlyFiles: false })).toEqual(['index.spec.js', 'index.vue']),
-          },
-        ])
+        },
+      }, [
+        self({ componentPath: _require.resolve('./index.vue') }),
+        testerPluginPuppeteer(),
+        {
+          after: async () =>
+            expect(new Set(await globby('*', { onlyFiles: false }))).toEqual(new Set(['index.spec.js', 'index.vue', 'node_modules', 'package.json'])),
+        },
+      ])
 
-      `,
+    `,
         'index.vue': endent`
-        <template>
-          <div>Hello world</div>
-        </template>
+      <template>
+        <div>Hello world</div>
+      </template>
 
-      `,
+    `,
+        'package.json': JSON.stringify({ type: 'module' }),
       })
 
       const output = await execa(
@@ -241,6 +259,7 @@ export default {
         { all: true }
       )
       expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
-    })
+    },
   },
-}
+  [testerPluginTmpDir()]
+)
