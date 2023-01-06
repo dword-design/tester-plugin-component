@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`index works 1`] = `
-"[BABEL] Note: The code generator has deoptimised the styling of /Users/sebastianlandwehr/Desktop/tester-plugin-component/node_modules/rollup/dist/es/shared/rollup.js as it exceeds the max of 500KB.
+"[BABEL] Note: The code generator has deoptimised the styling of /node_modules/rollup/dist/es/shared/rollup.js as it exceeds the max of 500KB.
 
 
   index
