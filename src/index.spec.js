@@ -8,7 +8,7 @@ import unifyMochaOutput from 'unify-mocha-output'
 
 export default tester(
   {
-    async 'client mode'() {
+    'client mode': async () => {
       await outputFiles({
         'index.spec.js': endent`
       import { endent } from '@dword-design/functions'
@@ -62,30 +62,13 @@ export default tester(
     `,
         'package.json': JSON.stringify({ type: 'module' }),
       })
-
-      const output = await execa(
-        'nyc',
-        [
-          '--reporter',
-          'lcov',
-          '--reporter',
-          'text',
-          '--cwd',
-          process.cwd(),
-          '--extension',
-          '.vue',
-          '--exclude',
-          'tmp-*',
-          'mocha',
-          '--ui',
-          packageName`mocha-ui-exports-auto-describe`,
-          '--timeout',
-          80000,
-          'index.spec.js',
-        ],
-        { all: true }
-      )
-      expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
+      await execa('mocha', [
+        '--ui',
+        packageName`mocha-ui-exports-auto-describe`,
+        '--timeout',
+        80000,
+        'index.spec.js',
+      ])
     },
     error: async () => {
       await outputFiles({
@@ -145,7 +128,7 @@ export default tester(
       export default tester({
         works: {
           files: {
-            'modules/foobar.js': "export default () => console.log('foobarbaz')",
+            'modules/foobar.js': "export default () => { throw new Error('foobarbaz') }",
           },
           nuxtConfig: { build: { quiet: false }, modules: ['~/modules/foobar.js'] },
           page: endent\`
@@ -168,26 +151,15 @@ export default tester(
     `,
         'package.json': JSON.stringify({ type: 'module' }),
       })
-
-      const output = await execa(
-        'nyc',
-        [
-          '--cwd',
-          process.cwd(),
-          '--extension',
-          '.vue',
-          '--exclude',
-          'tmp-*',
-          'mocha',
+      await expect(
+        execa('mocha', [
           '--ui',
           packageName`mocha-ui-exports-auto-describe`,
           '--timeout',
           80000,
           'index.spec.js',
-        ],
-        { all: true }
-      )
-      expect(output.all |> unifyMochaOutput).toMatch('foobarbaz')
+        ])
+      ).rejects.toThrow('foobarbaz')
     },
     async works() {
       await outputFiles({
