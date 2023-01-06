@@ -145,16 +145,15 @@ export default tester(
       export default tester({
         works: {
           files: {
-            'node_modules/foobar.js': "export default () => console.log('foobarbaz')",
+            'modules/foobar.js': "export default () => console.log('foobarbaz')",
           },
-          nuxtConfig: { build: { quiet: false }, modules: ['foobar'] },
+          nuxtConfig: { build: { quiet: false }, modules: ['~/modules/foobar.js'] },
           page: endent\`
             <template>
               <self class="foo" />
             </template>
 
           \`,
-          test: () => {},
         },
       }, [
         self({ componentPath: _require.resolve('./index.vue') }),
