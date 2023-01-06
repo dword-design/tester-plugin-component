@@ -281,7 +281,13 @@ export default tester(
         { all: true }
       )
       expect(
-        output.all |> unifyMochaOutput |> replace(cwd, '')
+        output.all
+          |> unifyMochaOutput
+          |> replace(cwd, '')
+          |> replace(
+            '\node_modules\rollupdistesshared\rollup.js',
+            '/node_modules/rollup/dist/es/shared/rollup.js'
+          )
       ).toMatchSnapshot(this)
     },
   },
