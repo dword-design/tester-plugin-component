@@ -285,7 +285,7 @@ export default tester(
           |> unifyMochaOutput
           |> replace(cwd, '')
           |> replace(
-            '\\node_modules\\rollup\\distes\\shared\\rollup.js',
+            '\\node_modules\\rollup\\dist\\es\\shared\\rollup.js',
             '/node_modules/rollup/dist/es/shared/rollup.js'
           )
       ).toMatchSnapshot(this)
