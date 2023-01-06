@@ -1,10 +1,12 @@
-import { endent } from '@dword-design/functions'
+import { endent, replace } from '@dword-design/functions'
 import tester from '@dword-design/tester'
 import testerPluginTmpDir from '@dword-design/tester-plugin-tmp-dir'
 import packageName from 'depcheck-package-name'
 import { execa } from 'execa'
 import outputFiles from 'output-files'
 import unifyMochaOutput from 'unify-mocha-output'
+
+const cwd = process.cwd()
 
 export default tester(
   {
@@ -278,7 +280,9 @@ export default tester(
         ],
         { all: true }
       )
-      expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
+      expect(
+        output.all |> unifyMochaOutput |> replace(cwd, '')
+      ).toMatchSnapshot(this)
     },
   },
   [testerPluginTmpDir()]
