@@ -25,7 +25,6 @@
     "@dword-design/tester-plugin-nuxt-config": "^1.1.7",
     "depcheck-package-name": "^2.0.0",
     "nuxt-sourcemaps-abs-sourceroot": "^2.0.0",
-    "vue": "^2.6.12",
     "webpack": "^4"
   },
   "devDependencies": {
