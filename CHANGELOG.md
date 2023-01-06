@@ -1,3 +1,12 @@
+## [2.0.13](https://github.com/dword-design/tester-plugin-component/compare/v2.0.12...v2.0.13) (2023-01-06)
+
+
+### Bug Fixes
+
+* foo ([cf79119](https://github.com/dword-design/tester-plugin-component/commit/cf79119858e5796e46913824413924b72341754c))
+* use tester-plugin-nuxt-config ([fb5ebc9](https://github.com/dword-design/tester-plugin-component/commit/fb5ebc9ad822e0079ad760847ebcdfdffa5ad2d0))
+* vue 3 ([#105](https://github.com/dword-design/tester-plugin-component/issues/105)) ([c4f330d](https://github.com/dword-design/tester-plugin-component/commit/c4f330dd28c06f284d81fbb9e07b2a5a3a862101))
+
 ## [2.0.12](https://github.com/dword-design/tester-plugin-component/compare/v2.0.11...v2.0.12) (2023-01-05)
 
 
