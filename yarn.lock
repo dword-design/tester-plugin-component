@@ -11072,10 +11072,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha512-4jbtZXNAsfZbAHiiqjLPBiCl16dES1zI4Hpzzxw61Tk+loF+sBDBKx1ICKKKwIqQ7M0mFn1TmkN7euSncWgHiQ==
 
-nuxt-sourcemaps-abs-sourceroot@^2.0.0:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/nuxt-sourcemaps-abs-sourceroot/-/nuxt-sourcemaps-abs-sourceroot-2.0.9.tgz#bb6e0118338582d9d4dec07686a989e854746dd8"
-  integrity sha512-/0Sw+swGyayCggvyhQlZr27jQI8+JdKwv7x3/ctRnF11K0iwxx70pNVu4f33rabAarSKcb3IDm7fm64h+iPyIA==
+nuxt-sourcemaps-abs-sourceroot@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/nuxt-sourcemaps-abs-sourceroot/-/nuxt-sourcemaps-abs-sourceroot-3.0.0.tgz#26eb041b2df0848252d6e2bb64d24b9e8027b161"
+  integrity sha512-TqJB+ngXAUjcE3jJokQj60fDFXteugk1Vfq8pqry8VKKEujDezc7m3FuhKTxQt2lNieZtNg/zxvsvb7hroCkxQ==
 
 nuxt@~2.15.5:
   version "2.15.8"
