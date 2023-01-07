@@ -1,47 +1,51 @@
 import { endent } from '@dword-design/functions'
-import testerPluginNuxtConfig from '@dword-design/tester-plugin-nuxt-config'
 import packageName from 'depcheck-package-name'
+import { Builder, Nuxt } from 'nuxt'
+import outputFiles from 'output-files'
 import P from 'path'
+import withLocalTmpDir from 'with-local-tmp-dir'
 
-export default (options = {}) => {
-  const testerPlugin = testerPluginNuxtConfig()
+export default (options = {}) => ({
+  transform: test => {
+    test = { nuxtConfig: {}, test: () => {}, ...test }
 
-  return {
-    ...testerPlugin,
-    transform: config => {
-      config = { nuxtConfig: {}, vueVersion: 2, ...config }
+    return function () {
+      return withLocalTmpDir(async () => {
+        await outputFiles({
+          'pages/index.vue': test.page,
+          'plugins/plugin.js': endent`
+          import Self from '${options.componentPath.replace(/\\/g, '/')}'
+          import Vue from '${packageName`vue`}'
 
-      return testerPlugin.transform({
-        config: {
+          Vue.component('Self', Self)
+
+        `,
+          ...test.files,
+        })
+
+        const nuxt = new Nuxt({
           dev: true,
-          ...config.nuxtConfig,
+          ...test.nuxtConfig,
           modules: [
             packageName`nuxt-sourcemaps-abs-sourceroot`,
-            ...(config.nuxtConfig.modules || []),
+            ...(test.nuxtConfig.modules || []),
           ],
           plugins: [
             {
               mode: options.pluginMode,
-              src: P.join('plugins', 'plugin.js'),
+              src: P.resolve('plugins', 'plugin.js'),
             },
-            ...(config.nuxtConfig.plugins || []),
+            ...(test.nuxtConfig.plugins || []),
           ],
-        },
-        error: config.error,
-        files: {
-          'pages/index.vue': config.page,
-          'plugins/plugin.js': endent`
-            import Self from '${options.componentPath.replace(/\\/g, '/')}'
-            import Vue from '${packageName`vue`}'
-
-            Vue.component('Self', Self)
-
-          `,
-          ...config.files,
-        },
-        nuxtVersion: config.vueVersion,
-        test: config.test,
+        })
+        await new Builder(nuxt).build()
+        await nuxt.listen()
+        try {
+          await test.test.call(this)
+        } finally {
+          await nuxt.close()
+        }
       })
-    },
-  }
-}
+    }
+  },
+})
