@@ -1,11 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index works 1`] = `
-"[BABEL] Note: The code generator has deoptimised the styling of /node_modules/rollup/dist/es/shared/rollup.js as it exceeds the max of 500KB.
-
+exports[`index client mode 1`] = `
+"
 
   index
-- Installing Nuxt 2
+    ✓ works
+
+
+  1 passing
+
+-----------|---------|----------|---------|---------|-------------------
+File       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------|---------|----------|---------|---------|-------------------
+All files  |     100 |      100 |     100 |     100 |                   
+ index.vue |     100 |      100 |     100 |     100 |                   
+-----------|---------|----------|---------|---------|-------------------"
+`;
+
+exports[`index works 1`] = `
+"
+
+  index
     ✓ works
 
 
