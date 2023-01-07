@@ -1,12 +1,10 @@
-import { endent, replace } from '@dword-design/functions'
+import { endent } from '@dword-design/functions'
 import tester from '@dword-design/tester'
 import testerPluginTmpDir from '@dword-design/tester-plugin-tmp-dir'
 import packageName from 'depcheck-package-name'
 import { execa } from 'execa'
 import outputFiles from 'output-files'
 import unifyMochaOutput from 'unify-mocha-output'
-
-const cwd = process.cwd()
 
 export default tester(
   {
@@ -102,13 +100,17 @@ export default tester(
         'package.json': JSON.stringify({ type: 'module' }),
       })
       await expect(
-        execa('mocha', [
-          '--ui',
-          packageName`mocha-ui-exports-auto-describe`,
-          '--timeout',
-          80000,
-          'index.spec.js',
-        ])
+        execa(
+          'mocha',
+          [
+            '--ui',
+            packageName`mocha-ui-exports-auto-describe`,
+            '--timeout',
+            80000,
+            'index.spec.js',
+          ],
+          { all: true }
+        )
       ).rejects.toThrow('Foo bar baz')
     },
     'nuxt config': async () => {
@@ -158,59 +160,6 @@ export default tester(
           'index.spec.js',
         ])
       ).rejects.toThrow('foobarbaz')
-    },
-    vue3: async () => {
-      await outputFiles({
-        'index.spec.js': endent`
-      import { endent } from '@dword-design/functions'
-      import tester from '${packageName`@dword-design/tester`}'
-      import self from '../src/index.js'
-      import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
-      import { createRequire } from 'module'
-      import { expect } from 'expect'
-
-      const _require = createRequire(import.meta.url)
-
-      export default tester({
-        works: {
-          vueVersion: 3,
-          page: endent\`
-            <template>
-              <self class="foo" />
-            </template>
-
-          \`,
-          async test() {
-            await this.page.goto('http://localhost:3000')
-            const foo = await this.page.waitForSelector('.foo')
-            expect(await foo.evaluate(el => el.innerText)).toEqual('Hello world')
-          },
-        },
-      }, [
-        self({ componentPath: _require.resolve('./index.vue') }),
-        testerPluginPuppeteer(),
-      ])
-
-    `,
-        'index.vue': endent`
-      <template>
-        <div>{{ foo }}</div>
-      </template>
-
-      <script setup>
-      const foo = ref('Hello world')
-      </script>
-
-    `,
-        'package.json': JSON.stringify({ type: 'module' }),
-      })
-      await execa('mocha', [
-        '--ui',
-        packageName`mocha-ui-exports-auto-describe`,
-        '--timeout',
-        80000,
-        'index.spec.js',
-      ])
     },
     async works() {
       await outputFiles({
@@ -280,15 +229,7 @@ export default tester(
         ],
         { all: true }
       )
-      expect(
-        output.all
-          |> unifyMochaOutput
-          |> replace(cwd, '')
-          |> replace(
-            '\\node_modules\\rollup\\dist\\es\\shared\\rollup.js',
-            '/node_modules/rollup/dist/es/shared/rollup.js'
-          )
-      ).toMatchSnapshot(this)
+      expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
     },
   },
   [testerPluginTmpDir()]

@@ -16,9 +16,7 @@ export default (options = {}) => {
           dev: true,
           ...config.nuxtConfig,
           modules: [
-            ...(config.vueVersion === 2
-              ? [packageName`nuxt-sourcemaps-abs-sourceroot`]
-              : []),
+            packageName`nuxt-sourcemaps-abs-sourceroot`,
             ...(config.nuxtConfig.modules || []),
           ],
           plugins: [
@@ -34,16 +32,10 @@ export default (options = {}) => {
           'pages/index.vue': config.page,
           'plugins/plugin.js': endent`
             import Self from '${options.componentPath.replace(/\\/g, '/')}'
+            import Vue from '${packageName`vue`}'
 
-            ${
-              config.vueVersion === 3
-                ? "export default defineNuxtPlugin(nuxtApp => nuxtApp.vueApp.component('Self', Self))"
-                : endent`
-                import Vue from '${packageName`vue`}'
-      
-                Vue.component('Self', Self)
-              `
-            }
+            Vue.component('Self', Self)
+
           `,
           ...config.files,
         },
