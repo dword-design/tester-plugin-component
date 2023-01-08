@@ -26,7 +26,7 @@
     "nuxt": "~2.15.5",
     "nuxt-sourcemaps-abs-sourceroot": "^2.0.0",
     "output-files": "^2.0.0",
-    "vue": "^2.6.12",
+    "vue": "^3.0.0",
     "with-local-tmp-dir": "^5.0.0"
   },
   "devDependencies": {
