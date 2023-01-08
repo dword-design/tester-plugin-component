@@ -1,3 +1,10 @@
+## [2.0.15](https://github.com/dword-design/tester-plugin-component/compare/v2.0.14...v2.0.15) (2023-01-08)
+
+
+### Bug Fixes
+
+* update dependency with-local-tmp-dir to v5 ([#108](https://github.com/dword-design/tester-plugin-component/issues/108)) ([5d0c94d](https://github.com/dword-design/tester-plugin-component/commit/5d0c94de6c7884dd6f0982faf3437aa0db29d279))
+
 ## [2.0.14](https://github.com/dword-design/tester-plugin-component/compare/v2.0.13...v2.0.14) (2023-01-07)
 
 
