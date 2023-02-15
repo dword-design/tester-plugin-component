@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/dword-design/tester-plugin-component/compare/v2.0.15...v3.0.0) (2023-02-15)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#110](https://github.com/dword-design/tester-plugin-component/issues/110)) ([a49d435](https://github.com/dword-design/tester-plugin-component/commit/a49d4350fd6e8238f8eb91d65873d9fba77bb886))
+
+
+### BREAKING CHANGES
+
+* Vue 3
+
 ## [2.0.15](https://github.com/dword-design/tester-plugin-component/compare/v2.0.14...v2.0.15) (2023-01-08)
 
 
