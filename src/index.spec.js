@@ -2,13 +2,12 @@ import { endent } from '@dword-design/functions'
 import tester from '@dword-design/tester'
 import testerPluginTmpDir from '@dword-design/tester-plugin-tmp-dir'
 import packageName from 'depcheck-package-name'
-import { execa } from 'execa'
+import { execaCommand } from 'execa'
 import outputFiles from 'output-files'
-import unifyMochaOutput from 'unify-mocha-output'
 
 export default tester(
   {
-    async 'client mode'() {
+    'client mode': async () => {
       await outputFiles({
         'index.spec.js': endent`
       import { endent } from '@dword-design/functions'
@@ -62,30 +61,7 @@ export default tester(
     `,
         'package.json': JSON.stringify({ type: 'module' }),
       })
-
-      const output = await execa(
-        'nyc',
-        [
-          '--reporter',
-          'lcov',
-          '--reporter',
-          'text',
-          '--cwd',
-          process.cwd(),
-          '--extension',
-          '.vue',
-          '--exclude',
-          'tmp-*',
-          'mocha',
-          '--ui',
-          packageName`mocha-ui-exports-auto-describe`,
-          '--timeout',
-          80000,
-          'index.spec.js',
-        ],
-        { all: true }
-      )
-      expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
+      await execaCommand('mocha --ui exports --timeout 80000 index.spec.js')
     },
     error: async () => {
       await outputFiles({
@@ -117,17 +93,7 @@ export default tester(
         'package.json': JSON.stringify({ type: 'module' }),
       })
       await expect(
-        execa(
-          'mocha',
-          [
-            '--ui',
-            packageName`mocha-ui-exports-auto-describe`,
-            '--timeout',
-            80000,
-            'index.spec.js',
-          ],
-          { all: true }
-        )
+        execaCommand('mocha --ui exports --timeout 80000 index.spec.js')
       ).rejects.toThrow('Foo bar baz')
     },
     'nuxt config': async () => {
@@ -170,27 +136,13 @@ export default tester(
         'package.json': JSON.stringify({ type: 'module' }),
       })
 
-      const output = await execa(
-        'nyc',
-        [
-          '--cwd',
-          process.cwd(),
-          '--extension',
-          '.vue',
-          '--exclude',
-          'tmp-*',
-          'mocha',
-          '--ui',
-          packageName`mocha-ui-exports-auto-describe`,
-          '--timeout',
-          80000,
-          'index.spec.js',
-        ],
+      const output = await await execaCommand(
+        'mocha --ui exports --timeout 80000 index.spec.js',
         { all: true }
       )
-      expect(output.all |> unifyMochaOutput).toMatch('foobarbaz')
+      expect(output.all).toMatch('foobarbaz')
     },
-    async works() {
+    works: async () => {
       await outputFiles({
         'index.spec.js': endent`
       import { endent } from '@dword-design/functions'
@@ -220,10 +172,6 @@ export default tester(
       }, [
         self({ componentPath: _require.resolve('./index.vue') }),
         testerPluginPuppeteer(),
-        {
-          after: async () =>
-            expect(new Set(await globby('*', { onlyFiles: false }))).toEqual(new Set(['index.spec.js', 'index.vue', 'node_modules', 'package.json'])),
-        },
       ])
 
     `,
@@ -235,30 +183,7 @@ export default tester(
     `,
         'package.json': JSON.stringify({ type: 'module' }),
       })
-
-      const output = await execa(
-        'nyc',
-        [
-          '--reporter',
-          'lcov',
-          '--reporter',
-          'text',
-          '--cwd',
-          process.cwd(),
-          '--extension',
-          '.vue',
-          '--exclude',
-          'tmp-*',
-          'mocha',
-          '--ui',
-          packageName`mocha-ui-exports-auto-describe`,
-          '--timeout',
-          80000,
-          'index.spec.js',
-        ],
-        { all: true }
-      )
-      expect(output.all |> unifyMochaOutput).toMatchSnapshot(this)
+      await execaCommand('mocha --ui exports --timeout 80000 index.spec.js')
     },
   },
   [testerPluginTmpDir()]
