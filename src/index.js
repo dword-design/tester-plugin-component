@@ -1,49 +1,54 @@
 import { endent } from '@dword-design/functions'
-import packageName from 'depcheck-package-name'
-import { Builder, Nuxt } from 'nuxt'
+import { loadNuxt } from '@nuxt/kit'
+import { execaCommand } from 'execa'
+import { expect } from 'expect'
+import { build } from 'nuxt'
 import outputFiles from 'output-files'
-import P from 'path'
+import { pEvent } from 'p-event'
+import kill from 'tree-kill-promise'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default (options = {}) => ({
-  transform: test => {
-    test = { nuxtConfig: {}, test: () => {}, ...test }
+  transform: config => {
+    config = { nuxtConfig: {}, test: () => {}, ...config }
 
     return function () {
       return withLocalTmpDir(async () => {
         await outputFiles({
-          'pages/index.vue': test.page,
-          'plugins/plugin.js': endent`
-          import Self from '${options.componentPath.replace(/\\/g, '/')}'
-          import Vue from '${packageName`vue`}'
+          'pages/index.vue': config.page,
+          [`plugins/plugin${
+            options.pluginMode ? `.${options.pluginMode}` : ''
+          }.js`]: endent`
+            import Self from '${options.componentPath.replace(/\\/g, '/')}'
 
-          Vue.component('Self', Self)
-
+            export default defineNuxtPlugin(nuxtApp => nuxtApp.vueApp.component('Self', Self))
         `,
-          ...test.files,
+          ...config.files,
         })
 
-        const nuxt = new Nuxt({
-          dev: true,
-          ...test.nuxtConfig,
-          modules: [
-            packageName`nuxt-sourcemaps-abs-sourceroot`,
-            ...(test.nuxtConfig.modules || []),
-          ],
-          plugins: [
-            {
-              mode: options.pluginMode,
-              src: P.resolve('plugins', 'plugin.js'),
-            },
-            ...(test.nuxtConfig.plugins || []),
-          ],
+        const nuxt = await loadNuxt({
+          config: {
+            telemetry: false,
+            vite: { logLevel: 'error' },
+            ...config.nuxtConfig,
+          },
         })
-        await new Builder(nuxt).build()
-        await nuxt.listen()
-        try {
-          await test.test.call(this)
-        } finally {
-          await nuxt.close()
+        if (config.error) {
+          await expect(build(nuxt)).rejects.toThrow(config.error)
+        } else {
+          await build(nuxt)
+
+          const childProcess = execaCommand('nuxt start', { all: true })
+          await pEvent(
+            childProcess.all,
+            'data',
+            data => data.toString() === 'Listening http://[::]:3000\n'
+          )
+          try {
+            await config.test.call(this)
+          } finally {
+            await kill(childProcess.pid)
+          }
         }
       })
     }
