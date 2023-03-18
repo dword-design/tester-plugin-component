@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/dword-design/tester-plugin-component/compare/v3.0.5...v3.0.6) (2023-03-18)
+
+
+### Bug Fixes
+
+* update dependency execa to v7.1.1 ([93ca1ed](https://github.com/dword-design/tester-plugin-component/commit/93ca1ed36412a52f58a407ffe44d0f236622e344))
+
 ## [3.0.5](https://github.com/dword-design/tester-plugin-component/compare/v3.0.4...v3.0.5) (2023-03-16)
 
 
