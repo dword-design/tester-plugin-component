@@ -1,3 +1,10 @@
+## [3.0.18](https://github.com/dword-design/tester-plugin-component/compare/v3.0.17...v3.0.18) (2023-03-19)
+
+
+### Bug Fixes
+
+* update dependency output-files to v2.0.17 ([8b634a0](https://github.com/dword-design/tester-plugin-component/commit/8b634a03230d4d8b77e6a8f80ddfcd1665191941))
+
 ## [3.0.17](https://github.com/dword-design/tester-plugin-component/compare/v3.0.16...v3.0.17) (2023-03-19)
 
 
