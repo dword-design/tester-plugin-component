@@ -1,3 +1,10 @@
+## [3.0.19](https://github.com/dword-design/tester-plugin-component/compare/v3.0.18...v3.0.19) (2023-03-19)
+
+
+### Bug Fixes
+
+* update dependency tree-kill-promise to v3.0.7 ([3940208](https://github.com/dword-design/tester-plugin-component/commit/3940208aaf9818728f91a120f5f15e136486b7ee))
+
 ## [3.0.18](https://github.com/dword-design/tester-plugin-component/compare/v3.0.17...v3.0.18) (2023-03-19)
 
 
