@@ -22,7 +22,7 @@ export default (options = {}) => ({
             import Self from '${options.componentPath.replace(/\\/g, '/')}'
 
             export default defineNuxtPlugin(nuxtApp => nuxtApp.vueApp.component('Self', Self))
-        `,
+          `,
           ...config.files,
         })
 
@@ -42,7 +42,7 @@ export default (options = {}) => ({
           await pEvent(
             childProcess.all,
             'data',
-            data => data.toString() === 'Listening http://[::]:3000\n'
+            data => data.toString() === 'Listening http://[::]:3000\n',
           )
           try {
             await config.test.call(this)
