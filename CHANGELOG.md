@@ -1,3 +1,10 @@
+## [3.0.47](https://github.com/dword-design/tester-plugin-component/compare/v3.0.46...v3.0.47) (2023-04-11)
+
+
+### Bug Fixes
+
+* update dependency globby to v13.1.4 ([6d79a04](https://github.com/dword-design/tester-plugin-component/commit/6d79a049919d517ff65c9939d391ad5159893a10))
+
 ## [3.0.46](https://github.com/dword-design/tester-plugin-component/compare/v3.0.45...v3.0.46) (2023-04-11)
 
 
