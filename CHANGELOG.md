@@ -1,3 +1,10 @@
+## [3.0.53](https://github.com/dword-design/tester-plugin-component/compare/v3.0.52...v3.0.53) (2023-04-13)
+
+
+### Bug Fixes
+
+* update dependency @nuxt/kit to v3.4.1 ([8353735](https://github.com/dword-design/tester-plugin-component/commit/8353735ed04fd9bc5136833265beacdd474fb383))
+
 ## [3.0.52](https://github.com/dword-design/tester-plugin-component/compare/v3.0.51...v3.0.52) (2023-04-12)
 
 
