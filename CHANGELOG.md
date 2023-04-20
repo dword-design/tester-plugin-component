@@ -1,3 +1,10 @@
+## [3.0.58](https://github.com/dword-design/tester-plugin-component/compare/v3.0.57...v3.0.58) (2023-04-20)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/tester-plugin-puppeteer to v2.1.64 ([268c2e8](https://github.com/dword-design/tester-plugin-component/commit/268c2e87d21d8096203ed6f490f216689f27bcb9))
+
 ## [3.0.57](https://github.com/dword-design/tester-plugin-component/compare/v3.0.56...v3.0.57) (2023-04-17)
 
 
