@@ -1,16 +1,13 @@
 import { endent } from '@dword-design/functions'
-import { loadNuxt } from '@nuxt/kit'
 import { execaCommand } from 'execa'
-import { expect } from 'expect'
-import { build } from 'nuxt'
+import nuxtDevReady from 'nuxt-dev-ready'
 import outputFiles from 'output-files'
-import { pEvent } from 'p-event'
 import kill from 'tree-kill-promise'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 export default (options = {}) => ({
   transform: config => {
-    config = { nuxtConfig: {}, test: () => {}, ...config }
+    config = { test: () => {}, ...config }
 
     return function () {
       return withLocalTmpDir(async () => {
@@ -26,29 +23,14 @@ export default (options = {}) => ({
           ...config.files,
         })
 
-        const nuxt = await loadNuxt({
-          config: {
-            telemetry: false,
-            vite: { logLevel: 'error' },
-            ...config.nuxtConfig,
-          },
+        const nuxt = execaCommand('nuxt dev', {
+          env: { NUXT_TELEMETRY_DISABLED: 1 },
         })
-        if (config.error) {
-          await expect(build(nuxt)).rejects.toThrow(config.error)
-        } else {
-          await build(nuxt)
-
-          const childProcess = execaCommand('nuxt start', { all: true })
-          await pEvent(
-            childProcess.all,
-            'data',
-            data => data.toString() === 'Listening http://[::]:3000\n',
-          )
-          try {
-            await config.test.call(this)
-          } finally {
-            await kill(childProcess.pid)
-          }
+        await nuxtDevReady()
+        try {
+          await config.test.call(this)
+        } finally {
+          await kill(nuxt.pid)
         }
       })
     }
