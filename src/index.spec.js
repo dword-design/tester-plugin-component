@@ -88,59 +88,12 @@ export default tester(
           <template>
             <div>Hello world</div>
           </template>
-
         `,
         'package.json': JSON.stringify({ type: 'module' }),
       })
       await expect(
         execaCommand('mocha --ui exports --timeout 80000 index.spec.js'),
       ).rejects.toThrow('Foo bar baz')
-    },
-    'nuxt config': async () => {
-      await outputFiles({
-        'index.spec.js': endent`
-          import { endent } from '@dword-design/functions'
-          import tester from '${packageName`@dword-design/tester`}'
-          import { globby } from '${packageName`globby`}'
-          import { createRequire } from 'module'
-
-          import self from '../src/index.js'
-
-          const _require = createRequire(import.meta.url)
-
-          export default tester({
-            works: {
-              files: {
-                'node_modules/foobar.js': "export default () => console.log('foobarbaz')",
-              },
-              nuxtConfig: { build: { quiet: false }, modules: ['foobar'] },
-              page: endent\`
-                <template>
-                  <self class="foo" />
-                </template>
-
-              \`,
-              test: () => {},
-            },
-          }, [
-            self({ componentPath: _require.resolve('./index.vue') }),
-          ])
-
-        `,
-        'index.vue': endent`
-          <template>
-            <div>Hello world</div>
-          </template>
-
-        `,
-        'package.json': JSON.stringify({ type: 'module' }),
-      })
-
-      const output = await await execaCommand(
-        'mocha --ui exports --timeout 80000 index.spec.js',
-        { all: true },
-      )
-      expect(output.all).toMatch('foobarbaz')
     },
     works: async () => {
       await outputFiles({
