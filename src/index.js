@@ -23,14 +23,14 @@ export default (options = {}) => ({
           ...config.files,
         })
 
-        const childProcess = execaCommand('nuxt dev', {
+        const nuxt = execaCommand('nuxt dev', {
           env: { NUXT_TELEMETRY_DISABLED: 1 },
         })
         await nuxtDevReady()
         try {
           await config.test.call(this)
         } finally {
-          await kill(childProcess.pid)
+          await kill(nuxt.pid)
         }
       })
     }
