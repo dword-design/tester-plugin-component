@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/dword-design/tester-plugin-component/compare/v3.0.65...v4.0.0) (2023-05-12)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#176](https://github.com/dword-design/tester-plugin-component/issues/176)) ([89affce](https://github.com/dword-design/tester-plugin-component/commit/89affce18201f187b8967445ea8a04745ab25f8f))
+
+
+### BREAKING CHANGES
+
+* drop nuxtConfig
+
 ## [3.0.65](https://github.com/dword-design/tester-plugin-component/compare/v3.0.64...v3.0.65) (2023-04-29)
 
 
