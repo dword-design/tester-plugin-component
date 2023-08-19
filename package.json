@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@dword-design/functions": "^4.0.0",
-    "execa": "^7.0.0",
+    "execa": "^8.0.0",
     "nuxt": "^3.2.0",
     "nuxt-dev-ready": "^1.0.0",
     "output-files": "^2.0.0",
