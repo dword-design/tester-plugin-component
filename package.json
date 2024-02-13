@@ -22,7 +22,7 @@
     "test": "base test"
   },
   "dependencies": {
-    "@dword-design/functions": "^5.0.27",
+    "@dword-design/functions": "^6.0.0",
     "execa": "^8.0.1",
     "nuxt": "^3.2.0",
     "nuxt-dev-ready": "^2.0.1",
