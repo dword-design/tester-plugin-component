@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/dword-design/tester-plugin-component/compare/v5.0.1...v5.1.0) (2024-11-14)
+
+
+### Features
+
+* hasFindPort ([#209](https://github.com/dword-design/tester-plugin-component/issues/209)) ([0dde032](https://github.com/dword-design/tester-plugin-component/commit/0dde0324cba94ea5109c3ce7d20fc1ccee10e195))
+
 ## [5.0.1](https://github.com/dword-design/tester-plugin-component/compare/v5.0.0...v5.0.1) (2024-11-14)
 
 
