@@ -14,6 +14,9 @@ importers:
       execa:
         specifier: ^9.5.1
         version: 9.5.1
+      get-port:
+        specifier: ^7.1.0
+        version: 7.1.0
       nuxt:
         specifier: ^3.2.0
         version: 3.14.159(@parcel/watcher@2.5.0)(@types/node@22.9.0)(eslint@8.57.1)(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.26.0)(sass@1.62.1)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.11(@types/node@22.9.0)(sass@1.62.1)(terser@5.36.0))
@@ -48,9 +51,6 @@ importers:
       depcheck-package-name:
         specifier: ^3.0.0
         version: 3.0.1
-      get-port:
-        specifier: ^7.1.0
-        version: 7.1.0
       globby:
         specifier: ^14.0.0
         version: 14.0.2
