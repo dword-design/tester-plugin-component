@@ -97,6 +97,50 @@ export default tester(
         execaCommand('mocha --ui exports --timeout 80000 index.spec.js'),
       ).rejects.toThrow('Foo bar baz');
     },
+    hasFindPort: async () => {
+      await outputFiles({
+        'index.spec.js': endent`
+          import { endent } from '@dword-design/functions'
+          import tester from '${packageName`@dword-design/tester`}'
+          import self from '../src/index.js'
+          import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
+          import { globby } from '${packageName`globby`}'
+          import { createRequire } from 'module'
+          import expect from 'expect'
+
+          const _require = createRequire(import.meta.url)
+
+          export default tester({
+            works: {
+              page: endent\`
+                <template>
+                  <self class="foo" />
+                </template>
+
+              \`,
+              async test({ port }) {
+                await this.page.goto(\`http://localhost:\${port}\`)
+                const foo = await this.page.waitForSelector('.foo')
+                expect(await foo.evaluate(el => el.innerText)).toEqual('Hello world')
+              },
+            },
+          }, [
+            self({ componentPath: _require.resolve('./index.vue'), hasFindPort: true }),
+            testerPluginPuppeteer(),
+          ])
+
+        `,
+        'index.vue': endent`
+          <template>
+            <div>Hello world</div>
+          </template>
+
+        `,
+        'package.json': JSON.stringify({ type: 'module' }),
+      });
+
+      await execaCommand('mocha --ui exports --timeout 80000 index.spec.js');
+    },
     works: async () => {
       await outputFiles({
         'index.spec.js': endent`

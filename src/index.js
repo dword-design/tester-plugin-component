@@ -1,5 +1,6 @@
 import { endent } from '@dword-design/functions';
 import { execaCommand } from 'execa';
+import getPort from 'get-port';
 import nuxtDevReady from 'nuxt-dev-ready';
 import outputFiles from 'output-files';
 import kill from 'tree-kill-promise';
@@ -23,14 +24,16 @@ export default (options = {}) => ({
           ...config.files,
         });
 
+        const port = options.hasFindPort ? await getPort() : 3000;
+
         const nuxt = execaCommand('nuxt dev', {
-          env: { NUXT_TELEMETRY_DISABLED: 1 },
+          env: { NUXT_TELEMETRY_DISABLED: 1, PORT: port },
         });
 
-        await nuxtDevReady();
+        await nuxtDevReady(port);
 
         try {
-          await config.test.call(this);
+          await config.test.call(this, { port });
         } finally {
           await kill(nuxt.pid);
         }
