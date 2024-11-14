@@ -1,13 +1,13 @@
-import { endent } from '@dword-design/functions'
-import { execaCommand } from 'execa'
-import nuxtDevReady from 'nuxt-dev-ready'
-import outputFiles from 'output-files'
-import kill from 'tree-kill-promise'
-import withLocalTmpDir from 'with-local-tmp-dir'
+import { endent } from '@dword-design/functions';
+import { execaCommand } from 'execa';
+import nuxtDevReady from 'nuxt-dev-ready';
+import outputFiles from 'output-files';
+import kill from 'tree-kill-promise';
+import withLocalTmpDir from 'with-local-tmp-dir';
 
 export default (options = {}) => ({
   transform: config => {
-    config = { test: () => {}, ...config }
+    config = { test: () => {}, ...config };
 
     return function () {
       return withLocalTmpDir(async () => {
@@ -21,18 +21,20 @@ export default (options = {}) => ({
             export default defineNuxtPlugin(nuxtApp => nuxtApp.vueApp.component('Self', Self))
           `,
           ...config.files,
-        })
+        });
 
         const nuxt = execaCommand('nuxt dev', {
           env: { NUXT_TELEMETRY_DISABLED: 1 },
-        })
-        await nuxtDevReady()
+        });
+
+        await nuxtDevReady();
+
         try {
-          await config.test.call(this)
+          await config.test.call(this);
         } finally {
-          await kill(nuxt.pid)
+          await kill(nuxt.pid);
         }
-      })
-    }
+      });
+    };
   },
-})
+});
