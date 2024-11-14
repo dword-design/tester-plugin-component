@@ -1,9 +1,9 @@
-import { endent } from '@dword-design/functions'
-import tester from '@dword-design/tester'
-import testerPluginTmpDir from '@dword-design/tester-plugin-tmp-dir'
-import packageName from 'depcheck-package-name'
-import { execaCommand } from 'execa'
-import outputFiles from 'output-files'
+import { endent } from '@dword-design/functions';
+import tester from '@dword-design/tester';
+import testerPluginTmpDir from '@dword-design/tester-plugin-tmp-dir';
+import packageName from 'depcheck-package-name';
+import { execaCommand } from 'execa';
+import outputFiles from 'output-files';
 
 export default tester(
   {
@@ -13,7 +13,7 @@ export default tester(
           import { endent } from '@dword-design/functions'
           import tester from '${packageName`@dword-design/tester`}'
           import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
-          import { expect } from 'expect'
+          import expect from 'expect'
           import { createRequire } from 'module'
 
           import self from '../src/index.js'
@@ -60,8 +60,9 @@ export default tester(
 
         `,
         'package.json': JSON.stringify({ type: 'module' }),
-      })
-      await execaCommand('mocha --ui exports --timeout 80000 index.spec.js')
+      });
+
+      await execaCommand('mocha --ui exports --timeout 80000 index.spec.js');
     },
     error: async () => {
       await outputFiles({
@@ -90,10 +91,11 @@ export default tester(
           </template>
         `,
         'package.json': JSON.stringify({ type: 'module' }),
-      })
+      });
+
       await expect(
         execaCommand('mocha --ui exports --timeout 80000 index.spec.js'),
-      ).rejects.toThrow('Foo bar baz')
+      ).rejects.toThrow('Foo bar baz');
     },
     works: async () => {
       await outputFiles({
@@ -104,7 +106,7 @@ export default tester(
           import testerPluginPuppeteer from '${packageName`@dword-design/tester-plugin-puppeteer`}'
           import { globby } from '${packageName`globby`}'
           import { createRequire } from 'module'
-          import { expect } from 'expect'
+          import expect from 'expect'
 
           const _require = createRequire(import.meta.url)
 
@@ -135,9 +137,10 @@ export default tester(
 
         `,
         'package.json': JSON.stringify({ type: 'module' }),
-      })
-      await execaCommand('mocha --ui exports --timeout 80000 index.spec.js')
+      });
+
+      await execaCommand('mocha --ui exports --timeout 80000 index.spec.js');
     },
   },
   [testerPluginTmpDir()],
-)
+);

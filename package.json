@@ -22,24 +22,25 @@
     "test": "base test"
   },
   "dependencies": {
-    "@dword-design/functions": "^5.0.27",
-    "execa": "^8.0.1",
+    "@dword-design/functions": "^6.0.1",
+    "execa": "^9.5.1",
     "nuxt": "^3.2.0",
-    "nuxt-dev-ready": "^2.0.1",
+    "nuxt-dev-ready": "^3.0.0",
     "output-files": "^2.0.0",
     "tree-kill-promise": "^3.0.1",
     "with-local-tmp-dir": "^5.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^11.0.2",
-    "@dword-design/puppeteer": "^6.0.0",
+    "@dword-design/puppeteer": "^7.0.2",
     "@dword-design/tester": "^2.0.0",
-    "@dword-design/tester-plugin-puppeteer": "^2.0.0",
+    "@dword-design/tester-plugin-puppeteer": "^3.0.3",
     "@dword-design/tester-plugin-tmp-dir": "^2.1.6",
     "depcheck-package-name": "^3.0.0",
     "globby": "^14.0.0",
     "mocha": "^10.2.0"
   },
+  "packageManager": "pnpm@9.13.1+sha512.5ac37545851c55ec58521b6c285db6f848f93ca70889beb4145f5b40fe234e4ea4faee4dad12ac5c139e494374c65d9c3a6ec9a25954378fa286a250e68d2f20",
   "engines": {
     "node": ">=18"
   },
